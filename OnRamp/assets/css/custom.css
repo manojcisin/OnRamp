@@ -1,0 +1,1516 @@
+.happygreen.btn {
+    color: white;
+    background-color: #76c043;
+    border-color: none;
+}
+
+
+/***
+Venio Module Styles on Menu Page
+***/
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+
+.page-breadcrumb.breadcrumb li {
+    display: inline-block;
+}
+
+#divVsrMgmt #btnFilter {
+    margin: 5px;
+    font-size: 12px;
+    padding: 10px 10px 10px;
+}
+
+#divVsrMgmt .tpBx {
+    float: left;
+    margin-bottom: 5px;
+}
+
+.topBoxes:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+#divVsrMgmt .tpBx .tB {
+    float: left;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    margin-bottom: 0px;
+}
+
+#divVsrMgmt .tpBx .tB {
+    font-weight: normal;
+    background-color: whitesmoke;
+}
+
+    #divVsrMgmt .tpBx .tB .tbX {
+        display: inline-block;
+        margin: 0 5px;
+    }
+
+        #divVsrMgmt .tpBx .tB .tbX span {
+            display: block;
+            font-size: smaller;
+        }
+
+
+
+
+.venio-pricing-table {
+    border: 3px solid transparent;
+    padding: 10px;
+    background-color: #f1f2f2;
+}
+
+    .venio-pricing-table:hover {
+        border-color: #4b8df8;
+    }
+
+    .venio-pricing-table h3 {
+        margin-left: -2px;
+        padding-left: 0px;
+        font-size: 26px;
+        margin-bottom: 5px;
+        line-height: 26px;
+        color: #111;
+        margin-top: 0px;
+    }
+
+    .venio-pricing-table .desc {
+        margin-bottom: 10px;
+        padding-bottom: 15px;
+        color: #666;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .venio-pricing-table ul {
+        margin: 0px;
+        margin-bottom: 15px;
+        padding: 0px;
+        list-style: none;
+    }
+
+.venio-ricing-table ul li {
+    padding: 6px 0px;
+    padding-left: 11px;
+    font-size: 13px;
+    line-height: 13px;
+    color: #666;
+}
+
+.venio-pricing-table ul li i {
+    position: absolute;
+    margin-right: 0px;
+    margin-top: -2px;
+    margin-left: -17px;
+    color: #867396;
+    font-size: 16px;
+}
+
+.venio-pricing-table .rate {
+    border-top: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    clear: both;
+}
+
+.venio-pricing-table.selected .rate {
+    border-top-color: #fff;
+}
+
+.venio-pricing-table .rate:before,
+.pricing-table .rate:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.venio-pricing-table .rate:after {
+    clear: both;
+}
+
+.venio-pricing-table .rate .price {
+    display: inline-block;
+    float: left;
+    clear: both;
+}
+
+.venio-pricing-table .rate .btn {
+    margin-top: 3px;
+    float: right;
+    display: block;
+}
+
+.venio-pricing-table .rate .price .currency {
+    padding-top: 4px;
+    float: left;
+    width: 50px;
+    text-align: right;
+    font-size: 13px;
+    line-height: 14px;
+    font-weight: 300;
+    margin-right: 2px;
+}
+
+.venio-pricing-table .rate .price .amount {
+    padding-top: 4px;
+    letter-spacing: -3px;
+    float: left;
+    text-align: right;
+    font-size: 36px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.venio-pricing-table.selected {
+    background-color: #4b8df8;
+}
+
+    .venio-pricing-table.selected:hover {
+        border-color: #ddd;
+    }
+
+    .venio-pricing-table.selected .desc {
+        border-bottom-color: #fff;
+    }
+
+    .venio-pricing-table.selected h3,
+    .venio-pricing-table.selected .desc,
+    .venio-pricing-table.selected ul li,
+    .venio-pricing-table.selected ul li i,
+    .venio-pricing-table.selected .rate {
+        color: #fff;
+    }
+
+/***
+Pricing table(Alternative)
+***/
+
+.venio-pricing-table2 {
+    border: 3px solid transparent;
+    padding: 10px;
+    background-color: #f1f2f2;
+}
+
+    .venio-pricing-table2:hover {
+        border-color: #4b8df8;
+    }
+
+    .venio-pricing-table2 h3 {
+        margin-left: -2px;
+        padding-left: 0px;
+        font-size: 26px;
+        margin-bottom: 5px;
+        line-height: 26px;
+        margin-top: 0px;
+        color: #111;
+    }
+
+    .venio-pricing-table2 .desc {
+        margin-bottom: 10px;
+        padding-bottom: 0px;
+        color: #666;
+    }
+
+    .venio-pricing-table2 ul {
+        margin: 0px;
+        margin-bottom: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+        .venio-pricing-table2 ul li {
+            padding: 6px 0px;
+            padding-left: 11px;
+            font-size: 13px;
+            line-height: 13px;
+            color: #666;
+        }
+
+            .venio-pricing-table2 ul li i {
+                position: absolute;
+                margin-right: 0px;
+                margin-top: -2px;
+                margin-left: -17px;
+                color: #867396;
+                font-size: 16px;
+            }
+
+    .venio-pricing-table2 .rate {
+        margin-bottom: 10px;
+        padding: 15px 15px;
+        margin-left: -15px;
+        margin-right: -15px;
+        background-color: #867396;
+        color: #fff;
+        clear: both;
+    }
+
+    .venio-pricing-table2.selected .rate {
+        border-top-color: #fff;
+    }
+
+    .venio-pricing-table2 .rate:before,
+    .venio-pricing-table2 .rate:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    .venio-pricing-table2 .rate:after {
+        clear: both;
+    }
+
+    .venio-pricing-table2 .rate .price {
+        display: inline-block;
+        float: left;
+        clear: both;
+    }
+
+    .venio-pricing-table2 .rate .btn {
+        margin-top: 3px;
+        float: right;
+        display: block;
+    }
+
+    .venio-pricing-table2 .rate .price .currency {
+        padding-top: 4px;
+        float: left;
+        width: 50px;
+        text-align: right;
+        font-size: 13px;
+        line-height: 14px;
+        font-weight: 300;
+    }
+
+    .venio-pricing-table2 .rate .price .amount {
+        padding-top: 4px;
+        float: left;
+        text-align: right;
+        font-size: 36px;
+        line-height: 30px;
+        font-weight: 300;
+    }
+
+    .venio-pricing-table2.selected {
+        background-color: #4b8df8;
+    }
+
+        .venio-pricing-table2.selected.rate {
+            background-color: #ffb848;
+        }
+
+        .venio-pricing-table2.selected:hover {
+            border-color: #ddd;
+        }
+
+        .venio-pricing-table2.selected .desc {
+            border-bottom-color: #fff;
+        }
+
+        .venio-pricing-table2.selected h3,
+        .venio-pricing-table2.selected .desc,
+        .venio-pricing-table2.selected ul li,
+        .venio-pricing-table2.selected ul li i,
+        .venio-pricing-table2.selected .rate .currency,
+        .venio-pricing-table2.selected .rate .amount {
+            color: #fff !important;
+        }
+
+
+/***
+Pricing table(Alternative 2)
+***/
+.venio-pricing {
+    position: relative;
+    margin-bottom: 15px;
+    border: 3px solid #eee;
+}
+
+.venio-pricing-active {
+    border: 3px solid #867396;
+}
+
+.venio-pricing:hover {
+    border: 3px solid #867396;
+}
+
+    .venio-pricing:hover h4 {
+        color: #867396;
+    }
+
+.venio-pricing-head {
+    text-align: center;
+}
+
+    .venio-pricing-head h3,
+    .venio-pricing-head h4 {
+        margin: 0;
+        line-height: normal;
+    }
+
+        .venio-pricing-head h3 span,
+        .venio-pricing-head h4 span {
+            display: block;
+            margin-top: 5px;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+    .venio-pricing-head h3 {
+        font-weight: 300;
+        color: #fafafa;
+        padding: 12px 0;
+        font-size: 27px;
+        background: #867396;
+        border-bottom: solid 1px #867396;
+    }
+
+    .venio-pricing-head h4 {
+        color: #bac39f;
+        padding: 5px 0;
+        font-size: 54px;
+        font-weight: 300;
+        background: #fbfef2;
+        border-bottom: solid 1px #f5f9e7;
+    }
+
+.venio-pricing-head-active h4 {
+    color: #867396;
+}
+
+.venio-pricing-head h4 i {
+    top: -8px;
+    font-size: 28px;
+    font-style: normal;
+    position: relative;
+}
+
+.venio-pricing-head h4 span {
+    top: -10px;
+    font-size: 14px;
+    font-style: normal;
+    position: relative;
+}
+
+/*Pricing Content*/
+.venio-pricing-content li {
+    color: #888;
+    font-size: 12px;
+    padding: 7px 15px;
+    border-bottom: solid 1px #f5f9e7;
+}
+
+    .venio-pricing-content li i {
+        top: 2px;
+        color: #867396;
+        font-size: 16px;
+        margin-right: 5px;
+        position: relative;
+    }
+
+/*Pricing Footer*/
+.venio-pricing-footer {
+    color: #777;
+    font-size: 11px;
+    line-height: 17px;
+    text-align: center;
+    padding: 0 20px 19px;
+}
+
+/*Priceing Active*/
+.venio-price-active,
+.venio-pricing:hover {
+    z-index: 9;
+}
+
+    .venio-price-active h4 {
+        color: #867396;
+    }
+
+.no-space-pricing .venio-pricing:hover {
+    -webkit-transition: box-shadow 0.3s ease-in-out;
+    -moz-transition: box-shadow 0.3s ease-in-out;
+    -o-transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+    .no-space-pricing .venio-price-active .venio-pricing-head h4,
+    .no-space-pricing .venio-pricing:hover .venio-pricing-head h4 {
+        color: #867396;
+        padding: 15px 0;
+        font-size: 80px;
+        -webkit-transition: color 0.5s ease-in-out;
+        -moz-transition: color 0.5s ease-in-out;
+        -o-transition: color 0.5s ease-in-out;
+        transition: color 0.5s ease-in-out;
+    }
+
+
+@media (min-width: 768px) and (max-width: 1280px) {
+
+    .venio-pricing-table .rate .price,
+    .venio-pricing-table2 .rate .price {
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+/*Fero Module Styles*/
+.fero-pricing-table {
+    border: 3px solid transparent;
+    padding: 10px;
+    background-color: #f1f2f2;
+}
+
+    .fero-pricing-table:hover {
+        border-color: #4b8df8;
+    }
+
+    .fero-pricing-table h3 {
+        margin-left: -2px;
+        padding-left: 0px;
+        font-size: 26px;
+        margin-bottom: 5px;
+        line-height: 26px;
+        color: #111;
+        margin-top: 0px;
+    }
+
+    .fero-pricing-table .desc {
+        margin-bottom: 10px;
+        padding-bottom: 15px;
+        color: #666;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .fero-pricing-table ul {
+        margin: 0px;
+        margin-bottom: 15px;
+        padding: 0px;
+        list-style: none;
+    }
+
+        .fero-pricing-table ul li {
+            padding: 6px 0px;
+            padding-left: 11px;
+            font-size: 13px;
+            line-height: 13px;
+            color: #666;
+        }
+
+            .fero-pricing-table ul li i {
+                position: absolute;
+                margin-right: 0px;
+                margin-top: -2px;
+                margin-left: -17px;
+                color: #A8D166;
+                font-size: 16px;
+            }
+
+    .fero-pricing-table .rate {
+        border-top: 1px solid #ddd;
+        margin-bottom: 10px;
+        padding-top: 15px;
+        clear: both;
+    }
+
+    .fero-pricing-table.selected .rate {
+        border-top-color: #fff;
+    }
+
+    .fero-pricing-table .rate:before,
+    .fero-pricing-table .rate:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    .fero-pricing-table .rate:after {
+        clear: both;
+    }
+
+    .fero-pricing-table .rate .price {
+        display: inline-block;
+        float: left;
+        clear: both;
+    }
+
+    .fero-pricing-table .rate .btn {
+        margin-top: 3px;
+        float: right;
+        display: block;
+    }
+
+    .fero-pricing-table .rate .price .currency {
+        padding-top: 4px;
+        float: left;
+        width: 50px;
+        text-align: right;
+        font-size: 13px;
+        line-height: 14px;
+        font-weight: 300;
+        margin-right: 2px;
+    }
+
+    .fero-pricing-table .rate .price .amount {
+        padding-top: 4px;
+        letter-spacing: -3px;
+        float: left;
+        text-align: right;
+        font-size: 36px;
+        line-height: 30px;
+        font-weight: 300;
+    }
+
+    .fero-pricing-table.selected {
+        background-color: #4b8df8;
+    }
+
+        .fero-pricing-table.selected:hover {
+            border-color: #ddd;
+        }
+
+        .fero-pricing-table.selected .desc {
+            border-bottom-color: #fff;
+        }
+
+        .fero-pricing-table.selected h3,
+        .fero-pricing-table.selected .desc,
+        .fero-pricing-table.selected ul li,
+        .fero-pricing-table.selected ul li i,
+        .fero-pricing-table.selected .rate {
+            color: #fff;
+        }
+
+/***
+Pricing table(Alternative)
+***/
+
+.fero-pricing-table2 {
+    border: 3px solid transparent;
+    padding: 10px;
+    background-color: #f1f2f2;
+}
+
+    .fero-pricing-table2:hover {
+        border-color: #4b8df8;
+    }
+
+    .fero-pricing-table2 h3 {
+        margin-left: -2px;
+        padding-left: 0px;
+        font-size: 26px;
+        margin-bottom: 5px;
+        line-height: 26px;
+        margin-top: 0px;
+        color: #111;
+    }
+
+    .fero-pricing-table2 .desc {
+        margin-bottom: 10px;
+        padding-bottom: 0px;
+        color: #666;
+    }
+
+    .fero-pricing-table2 ul {
+        margin: 0px;
+        margin-bottom: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+        .fero-pricing-table2 ul li {
+            padding: 6px 0px;
+            padding-left: 11px;
+            font-size: 13px;
+            line-height: 13px;
+            color: #666;
+        }
+
+            .fero-pricing-table2 ul li i {
+                position: absolute;
+                margin-right: 0px;
+                margin-top: -2px;
+                margin-left: -17px;
+                color: #A8D166;
+                font-size: 16px;
+            }
+
+    .fero-pricing-table2 .rate {
+        margin-bottom: 10px;
+        padding: 15px 15px;
+        margin-left: -15px;
+        margin-right: -15px;
+        background-color: #A8D166;
+        color: #fff;
+        clear: both;
+    }
+
+    .fero-pricing-table2.selected .rate {
+        border-top-color: #fff;
+    }
+
+    .fero-pricing-table2 .rate:before,
+    .fero-pricing-table2 .rate:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    .fero-pricing-table2 .rate:after {
+        clear: both;
+    }
+
+    .fero-pricing-table2 .rate .price {
+        display: inline-block;
+        float: left;
+        clear: both;
+    }
+
+    .fero-pricing-table2 .rate .btn {
+        margin-top: 3px;
+        float: right;
+        display: block;
+    }
+
+    .fero-pricing-table2 .rate .price .currency {
+        padding-top: 4px;
+        float: left;
+        width: 50px;
+        text-align: right;
+        font-size: 13px;
+        line-height: 14px;
+        font-weight: 300;
+    }
+
+    .fero-pricing-table2 .rate .price .amount {
+        padding-top: 4px;
+        float: left;
+        text-align: right;
+        font-size: 36px;
+        line-height: 30px;
+        font-weight: 300;
+    }
+
+    .fero-pricing-table2.selected {
+        background-color: #A8D166;
+    }
+
+        .fero-pricing-table2.selected.rate {
+            background-color: #A8D166;
+        }
+
+        .fero-pricing-table2.selected:hover {
+            border-color: #ddd;
+        }
+
+        .fero-pricing-table2.selected .desc {
+            border-bottom-color: #fff;
+        }
+
+        .fero-pricing-table2.selected h3,
+        .fero-pricing-table2.selected .desc,
+        .fero-pricing-table2.selected ul li,
+        .fero-pricing-table2.selected ul li i,
+        .fero-pricing-table2.selected .rate .currency,
+        .fero-pricing-table2.selected .rate .amount {
+            color: #fff !important;
+        }
+
+
+/***
+Pricing table(Alternative 2)
+***/
+.fero-pricing {
+    position: relative;
+    margin-bottom: 15px;
+    border: 3px solid #eee;
+}
+
+.fero-pricing-active {
+    border: 3px solid #A8D166;
+}
+
+.fero-pricing:hover {
+    border: 3px solid #A8D166;
+}
+
+    .fero-pricing:hover h4 {
+        color: #A8D166;
+    }
+
+.fero-pricing-head {
+    text-align: center;
+}
+
+    .fero-pricing-head h3,
+    .fero-pricing-head h4 {
+        margin: 0;
+        line-height: normal;
+    }
+
+        .fero-pricing-head h3 span,
+        .fero-pricing-head h4 span {
+            display: block;
+            margin-top: 5px;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+    .fero-pricing-head h3 {
+        font-weight: 300;
+        color: #fafafa;
+        padding: 12px 0;
+        font-size: 27px;
+        background: #A8D166;
+        border-bottom: solid 1px #A8D166;
+    }
+
+    .fero-pricing-head h4 {
+        color: #bac39f;
+        padding: 5px 0;
+        font-size: 54px;
+        font-weight: 300;
+        background: #fbfef2;
+        border-bottom: solid 1px #f5f9e7;
+    }
+
+.fero-pricing-head-active h4 {
+    color: #A8D166;
+}
+
+.fero-pricing-head h4 i {
+    top: -8px;
+    font-size: 28px;
+    font-style: normal;
+    position: relative;
+}
+
+.fero-pricing-head h4 span {
+    top: -10px;
+    font-size: 14px;
+    font-style: normal;
+    position: relative;
+}
+
+/*Pricing Content*/
+.fero-pricing-content li {
+    color: #888;
+    font-size: 12px;
+    padding: 7px 15px;
+    border-bottom: solid 1px #f5f9e7;
+}
+
+    .fero-pricing-content li i {
+        top: 2px;
+        color: #A8D166;
+        font-size: 16px;
+        margin-right: 5px;
+        position: relative;
+    }
+
+/*Pricing Footer*/
+.fero-pricing-footer {
+    color: #777;
+    font-size: 11px;
+    line-height: 17px;
+    text-align: center;
+    padding: 0 20px 19px;
+}
+
+/*Priceing Active*/
+.fero-price-active,
+.fero-pricing:hover {
+    z-index: 9;
+}
+
+    .fero-price-active h4 {
+        color: #A8D166;
+    }
+
+.no-space-pricing .fero-pricing:hover {
+    -webkit-transition: box-shadow 0.3s ease-in-out;
+    -moz-transition: box-shadow 0.3s ease-in-out;
+    -o-transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+    .no-space-pricing .fero-price-active .fero-pricing-head h4,
+    .no-space-pricing .fero-pricing:hover .fero-pricing-head h4 {
+        color: #A8D166;
+        padding: 15px 0;
+        font-size: 80px;
+        -webkit-transition: color 0.5s ease-in-out;
+        -moz-transition: color 0.5s ease-in-out;
+        -o-transition: color 0.5s ease-in-out;
+        transition: color 0.5s ease-in-out;
+    }
+
+
+@media (min-width: 768px) and (max-width: 1280px) {
+
+    .fero-pricing-table .rate .price,
+    .fero-pricing-table2 .rate .price {
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+.font-red-intense-big {
+    color: #e35b5a !important;
+    font-size: 30px;
+}
+
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.active > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.active.open > a,
+.page-sidebar .page-sidebar-menu > li.active > a,
+.page-sidebar .page-sidebar-menu > li.active.open > a {
+    /*background: #888;*/
+    border-top-color: transparent;
+    color: white;
+}
+
+    .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.active > a:hover, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.active.open > a:hover,
+    .page-sidebar .page-sidebar-menu > li.active > a:hover,
+    .page-sidebar .page-sidebar-menu > li.active.open > a:hover {
+        /*background: #888;*/
+    }
+
+.table-layout-auto {
+    table-layout: auto;
+}
+
+.font-date-range {
+    color: #888 !important;
+    font-size: 12px;
+}
+
+
+
+.sadred.btn {
+    color: white;
+    background-color: #e35b5a;
+    border-color: none;
+}
+
+.concernedyellow.btn {
+    color: white;
+    background-color: #F7A35C;
+    border-color: none;
+}
+
+.concernedorange.btn {
+    color: #767676;
+    background-color: #ffff7c;
+    border-color: none;
+}
+
+.okblue.btn {
+    color: white;
+    background-color: #457fb2;
+    border-color: none;
+}
+
+/*Alerts Module Styles*/
+.alerts-pricing-table {
+    border: 3px solid transparent;
+    padding: 10px;
+    background-color: #f1f2f2;
+}
+
+    .alerts-pricing-table:hover {
+        border-color: #4b8df8;
+    }
+
+    .alerts-pricing-table h3 {
+        margin-left: -2px;
+        padding-left: 0px;
+        font-size: 26px;
+        margin-bottom: 5px;
+        line-height: 26px;
+        color: #111;
+        margin-top: 0px;
+    }
+
+    .alerts-pricing-table .desc {
+        margin-bottom: 10px;
+        padding-bottom: 15px;
+        color: #666;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .alerts-pricing-table ul {
+        margin: 0px;
+        margin-bottom: 15px;
+        padding: 0px;
+        list-style: none;
+    }
+
+        .alerts-pricing-table ul li {
+            padding: 6px 0px;
+            padding-left: 11px;
+            font-size: 13px;
+            line-height: 13px;
+            color: #666;
+        }
+
+            .alerts-pricing-table ul li i {
+                position: absolute;
+                margin-right: 0px;
+                margin-top: -2px;
+                margin-left: -17px;
+                color: #A8D166;
+                font-size: 16px;
+            }
+
+    .alerts-pricing-table .rate {
+        border-top: 1px solid #ddd;
+        margin-bottom: 10px;
+        padding-top: 15px;
+        clear: both;
+    }
+
+    .alerts-pricing-table.selected .rate {
+        border-top-color: #fff;
+    }
+
+    .alerts-pricing-table .rate:before,
+    .alerts-pricing-table .rate:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    .alerts-pricing-table .rate:after {
+        clear: both;
+    }
+
+    .alerts-pricing-table .rate .price {
+        display: inline-block;
+        float: left;
+        clear: both;
+    }
+
+    .alerts-pricing-table .rate .btn {
+        margin-top: 3px;
+        float: right;
+        display: block;
+    }
+
+    .alerts-pricing-table .rate .price .currency {
+        padding-top: 4px;
+        float: left;
+        width: 50px;
+        text-align: right;
+        font-size: 13px;
+        line-height: 14px;
+        font-weight: 300;
+        margin-right: 2px;
+    }
+
+    .alerts-pricing-table .rate .price .amount {
+        padding-top: 4px;
+        letter-spacing: -3px;
+        float: left;
+        text-align: right;
+        font-size: 36px;
+        line-height: 30px;
+        font-weight: 300;
+    }
+
+    .alerts-pricing-table.selected {
+        background-color: #4b8df8;
+    }
+
+        .alerts-pricing-table.selected:hover {
+            border-color: #ddd;
+        }
+
+        .alerts-pricing-table.selected .desc {
+            border-bottom-color: #fff;
+        }
+
+        .alerts-pricing-table.selected h3,
+        .alerts-pricing-table.selected .desc,
+        .alerts-pricing-table.selected ul li,
+        .alerts-pricing-table.selected ul li i,
+        .alerts-pricing-table.selected .rate {
+            color: #fff;
+        }
+
+/***
+Pricing table(Alternative)
+***/
+
+.alerts-pricing-table2 {
+    border: 3px solid transparent;
+    padding: 10px;
+    background-color: #f1f2f2;
+}
+
+    .alerts-pricing-table2:hover {
+        border-color: #e67950;
+    }
+
+    .alerts-pricing-table2 h3 {
+        margin-left: -2px;
+        padding-left: 0px;
+        font-size: 26px;
+        margin-bottom: 5px;
+        line-height: 26px;
+        margin-top: 0px;
+        color: #111;
+    }
+
+    .alerts-pricing-table2 .desc {
+        margin-bottom: 10px;
+        padding-bottom: 0px;
+        color: #666;
+    }
+
+    .alerts-pricing-table2 ul {
+        margin: 0px;
+        margin-bottom: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+        .alerts-pricing-table2 ul li {
+            padding: 6px 0px;
+            padding-left: 11px;
+            font-size: 13px;
+            line-height: 13px;
+            color: #666;
+        }
+
+            .alerts-pricing-table2 ul li i {
+                position: absolute;
+                margin-right: 0px;
+                margin-top: -2px;
+                margin-left: -17px;
+                color: #e67950;
+                font-size: 16px;
+            }
+
+    .alerts-pricing-table2 .rate {
+        margin-bottom: 10px;
+        padding: 15px 15px;
+        margin-left: -15px;
+        margin-right: -15px;
+        background-color: #e67950;
+        color: #fff;
+        clear: both;
+    }
+
+    .alerts-pricing-table2.selected .rate {
+        border-top-color: #fff;
+    }
+
+    .alerts-pricing-table2 .rate:before,
+    .alerts-pricing-table2 .rate:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    .alerts-pricing-table2 .rate:after {
+        clear: both;
+    }
+
+    .alerts-pricing-table2 .rate .price {
+        display: inline-block;
+        float: left;
+        clear: both;
+    }
+
+    .alerts-pricing-table2 .rate .btn {
+        margin-top: 3px;
+        float: right;
+        display: block;
+    }
+
+    .alerts-pricing-table2 .rate .price .currency {
+        padding-top: 4px;
+        float: left;
+        width: 50px;
+        text-align: right;
+        font-size: 13px;
+        line-height: 14px;
+        font-weight: 300;
+    }
+
+    .alerts-pricing-table2 .rate .price .amount {
+        padding-top: 4px;
+        float: left;
+        text-align: right;
+        font-size: 36px;
+        line-height: 30px;
+        font-weight: 300;
+    }
+
+    .alerts-pricing-table2.selected {
+        background-color: #e67950;
+    }
+
+        .alerts-pricing-table2.selected.rate {
+            background-color: #e67950;
+        }
+
+        .alerts-pricing-table2.selected:hover {
+            border-color: #ddd;
+        }
+
+        .alerts-pricing-table2.selected .desc {
+            border-bottom-color: #fff;
+        }
+
+        .alerts-pricing-table2.selected h3,
+        .alerts-pricing-table2.selected .desc,
+        .alerts-pricing-table2.selected ul li,
+        .alerts-pricing-table2.selected ul li i,
+        .alerts-pricing-table2.selected .rate .currency,
+        .alerts-pricing-table2.selected .rate .amount {
+            color: #fff !important;
+        }
+
+
+/***
+Pricing table(Alternative 2)
+***/
+.alerts-pricing {
+    position: relative;
+    margin-bottom: 15px;
+    border: 3px solid #eee;
+}
+
+.alerts-pricing-active {
+    border: 3px solid #e67950;
+}
+
+.alerts-pricing:hover {
+    border: 3px solid #e67950;
+}
+
+    .alerts-pricing:hover h4 {
+        color: #e67950;
+    }
+
+.alerts-pricing-head {
+    text-align: center;
+}
+
+    .alerts-pricing-head h3,
+    .alerts-pricing-head h4 {
+        margin: 0;
+        line-height: normal;
+    }
+
+        .alerts-pricing-head h3 span,
+        .alerts-pricing-head h4 span {
+            display: block;
+            margin-top: 5px;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+    .alerts-pricing-head h3 {
+        font-weight: 300;
+        color: #fafafa;
+        padding: 12px 0;
+        font-size: 27px;
+        background: #e67950;
+        border-bottom: solid 1px #e67950;
+    }
+
+    .alerts-pricing-head h4 {
+        color: #bac39f;
+        padding: 5px 0;
+        font-size: 54px;
+        font-weight: 300;
+        background: #fbfef2;
+        border-bottom: solid 1px #f5f9e7;
+    }
+
+.alerts-pricing-head-active h4 {
+    color: #e67950;
+}
+
+.alerts-pricing-head h4 i {
+    top: -8px;
+    font-size: 28px;
+    font-style: normal;
+    position: relative;
+}
+
+.alerts-pricing-head h4 span {
+    top: -10px;
+    font-size: 14px;
+    font-style: normal;
+    position: relative;
+}
+
+/*Pricing Content*/
+.alerts-pricing-content li {
+    color: #888;
+    font-size: 12px;
+    padding: 7px 15px;
+    border-bottom: solid 1px #f5f9e7;
+}
+
+    .alerts-pricing-content li i {
+        top: 2px;
+        color: #e67950;
+        font-size: 16px;
+        margin-right: 5px;
+        position: relative;
+    }
+
+/*Pricing Footer*/
+.alerts-pricing-footer {
+    color: #777;
+    font-size: 11px;
+    line-height: 17px;
+    text-align: center;
+    padding: 0 20px 19px;
+}
+
+/*Priceing Active*/
+.alerts-price-active,
+.alerts-pricing:hover {
+    z-index: 9;
+}
+
+    .alerts-price-active h4 {
+        color: #e67950;
+    }
+
+.no-space-pricing .alerts-pricing:hover {
+    -webkit-transition: box-shadow 0.3s ease-in-out;
+    -moz-transition: box-shadow 0.3s ease-in-out;
+    -o-transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+    .no-space-pricing .alerts-price-active .alerts-pricing-head h4,
+    .no-space-pricing .alerts-pricing:hover .alerts-pricing-head h4 {
+        color: #e67950;
+        padding: 15px 0;
+        font-size: 80px;
+        -webkit-transition: color 0.5s ease-in-out;
+        -moz-transition: color 0.5s ease-in-out;
+        -o-transition: color 0.5s ease-in-out;
+        transition: color 0.5s ease-in-out;
+    }
+
+
+@media (min-width: 768px) and (max-width: 1280px) {
+
+    .alerts-pricing-table .rate .price,
+    .alerts-pricing-table2 .rate .price {
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+.DeactivateIcon {
+    color: #90EE7E;
+}
+
+.ActivateIcon {
+    color: #e35b5a;
+}
+
+.editClassIcon {
+    color: #457fb2;
+}
+
+.LoginAsIcon {
+    color: #111111;
+}
+
+.tooltip-arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-bottom-color: #000000;
+    border: 0px;
+}
+
+/*this is already in components.css*/
+/*.progress > .progress-bar-success {
+  background-color: #4b77be;
+}*/
+
+/* Page breadcrumb */
+.page-bar {
+    /*padding: 0px;
+      background-color: #f7f7f7;
+      margin-bottom: 25px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      border-radius: 4px;*/
+}
+
+    .page-bar:before, .page-bar:after {
+        /*content: " ";
+      display: table;*/
+    }
+
+    .page-bar:after {
+        /*clear: both;*/
+    }
+
+    .page-bar .page-breadcrumb {
+        /*display: inline-block;
+      float: left;
+      padding: 8px;
+      margin: 0;
+      list-style: none;*/
+    }
+
+        .page-bar .page-breadcrumb > li {
+            /*display: inline-block;*/
+        }
+
+.ie8 .page-bar .page-breadcrumb > li {
+    /*margin-right: 1px;*/
+}
+
+.page-bar .page-breadcrumb > li > a,
+.page-bar .page-breadcrumb > li > span {
+    /*color: #888;
+      font-size: 14px;
+      text-shadow: none;*/
+}
+
+.page-bar .page-breadcrumb > li > i {
+    /*color: #aaa;
+      font-size: 14px;
+      text-shadow: none;*/
+}
+
+    .page-bar .page-breadcrumb > li > i[class^="icon-"],
+    .page-bar .page-breadcrumb > li > i[class*="icon-"] {
+        /*color: gray;*/
+    }
+
+.page-bar .page-toolbar {
+    display: inline-block;
+    float: right;
+    padding: 0;
+}
+
+    .page-bar .page-toolbar .btn-fit-height {
+        -webkit-border-radius: 0 4px 4px 0;
+        -moz-border-radius: 0 4px 4px 0;
+        -ms-border-radius: 0 4px 4px 0;
+        -o-border-radius: 0 4px 4px 0;
+        border-radius: 0 4px 4px 0;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+.page-container-bg-solid .page-bar {
+    position: relative;
+    padding: 0px 20px;
+    background-color: #ffffff;
+    margin: -25px -20px 0 -20px;
+}
+
+    .page-container-bg-solid .page-bar .page-breadcrumb {
+        /*padding: 11px 0;*/
+    }
+
+        .page-container-bg-solid .page-bar .page-breadcrumb > li > a,
+        .page-container-bg-solid .page-bar .page-breadcrumb > li > span {
+            /*color: #888;*/
+        }
+
+        .page-container-bg-solid .page-bar .page-breadcrumb > li > i {
+            /*color: #aaa;*/
+        }
+
+            .page-container-bg-solid .page-bar .page-breadcrumb > li > i[class^="icon-"],
+            .page-container-bg-solid .page-bar .page-breadcrumb > li > i[class*="icon-"] {
+                /*color: #8c8c8c;*/
+            }
+
+    .page-container-bg-solid .page-bar .page-toolbar {
+        /*padding: 6px 0;*/
+    }
+
+        .page-container-bg-solid .page-bar .page-toolbar .btn {
+            /*margin-top: -2px;*/
+        }
+
+            .page-container-bg-solid .page-bar .page-toolbar .btn.btn-sm {
+                /*margin-top: 0px;*/
+            }
+
+.daterangepicker .input-mini {
+    width: 100% !important;
+    outline: 0 !important;
+}
+
+/** Responsive CSS for Edit Badge Crop **/
+@media screen and (max-width:1024px) {
+    .badgecrop-sec {
+        text-align: center;
+    }
+
+    .photo_block {
+        margin: 0 auto;
+    }
+
+    .preview_block {
+        margin: 0 auto;
+        width: 182px;
+    }
+
+    .upload-pic {
+        margin: 0 auto;
+    }
+
+    .upload-title {
+        text-align: center;
+    }
+}
+
+.bade-image {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    /* overflow: hidden; */
+}
+
+    .bade-image img {
+        max-height: 150px;
+    }
+
+.bade-content {
+    min-height: 120px;
+}
+
+    .bade-content h3 {
+        font-size: 14px;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+.pagination {
+    float: right;
+}

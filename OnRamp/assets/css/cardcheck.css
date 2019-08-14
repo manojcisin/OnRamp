@@ -1,0 +1,85 @@
+form input::-webkit-input-placeholder {
+    color: #ddd;
+}
+form input:-moz-placeholder {
+    color: #ddd;
+    opacity: 1;
+}
+form input::-moz-placeholder {
+    color: #ddd;
+    opacity: 1;
+}
+form input:-ms-input-placeholder {
+    color: #ddd;
+}
+form input:focus {
+    outline: 1px solid #38d;
+}
+form #creditcard {
+    background-image: url(../img/cardimages.png), url(../img/cardimages.png);
+    background-position: 2px -121px, 220px -61px;
+    background-size: 120px 403px, 120px 403px;
+    background-repeat: no-repeat;
+    padding-left: 54px;
+    /*width: 225px;*/
+}
+form #creditcard.visa {
+    background-position: 2px -163px, 220px -61px;
+}
+form #creditcard.visa_electron {
+    background-position: 2px -205px, 220px -61px;
+}
+form #creditcard.mastercard {
+    background-position: 2px -247px, 220px -61px;
+}
+form #creditcard.maestro {
+    background-position: 2px -289px, 220px -61px;
+}
+form #creditcard.discover {
+    background-position: 2px -331px, 220px -61px;
+}
+form #creditcard.amex {
+    background-position: 2px -373px, 220px -61px;
+}
+form #creditcard.valid.visa {
+    background-position: 2px -163px, 220px -87px;
+}
+form #creditcard.valid.visa_electron {
+    background-position: 2px -205px, 220px -87px;
+}
+form #creditcard.valid.mastercard {
+    background-position: 2px -247px, 220px -87px;
+}
+form #creditcard.valid.maestro {
+    background-position: 2px -289px, 220px -87px;
+}
+form #creditcard.discover.valid {
+    background-position: 2px -331px, 220px -87px;
+}
+form #creditcard.amex.valid {
+    background-position: 2px -373px, 220px -87px;
+}
+.vertical {
+    overflow: hidden;
+}
+.vertical li {
+    float: left;
+    width: 140px;
+}
+.vertical li .or {
+    color: #aaa;
+    float: left;
+    font-size: 12px;
+    margin-left: -8px;
+    margin-top: 32px;
+}
+.vertical li:last-child {
+    float: right;
+    text-align: right;
+}
+.vertical li:last-child input {
+    float: right;
+}
+.vertical input {
+    width: 68px;
+}

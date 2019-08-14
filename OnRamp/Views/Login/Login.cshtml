@@ -1,0 +1,133 @@
+﻿@model OnRamp.Models.UserModel
+@{
+    Layout = null;
+    var checkStatus = ViewBag.message;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>OnRamp</title>
+    <meta name="viewport" content="width=device-width">
+    @*<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">*@
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,400italic,600italic' rel='stylesheet' type='text/css' />
+    <link href="~/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/assets/css/components.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/plugins.css" rel="stylesheet" type="text/css" />
+
+
+    <!--<link href="~/assets/css/layout.css" rel="stylesheet" type="text/css" />-->
+    <link href="~/assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/layouts/layout/css/themes/light2.min.css" rel="stylesheet" type="text/css" />
+    <!--<link href="~/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color" />-->
+    <link href="~/assets/css/pages/login.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/assets/css/validationEngine.jquery.css" rel="stylesheet" />
+    <script src="~/assets/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="~/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+    <script src="~/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+
+    <script src="~/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/assets/jquery.validationEngine/jquery.validationEngine.js"></script>
+    <script src="~/assets/scripts/custom/jquery.validationEngine-en.js"></script>
+
+    <script src="~/assets/scripts/core/metronic.js"></script>
+    <script src="~/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+</head>
+<body class="login">
+    @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { id = "frmLogin",  @class = "login-form" })) {
+        @Html.AntiForgeryToken()
+        @*<input type="hidden" id="hdnreturnUrl" name="hdnreturnUrl" value="@Model.ReturnUrl" />*@
+        <div class="logo">
+            <img src="~/assets/img/logo-on-white.png" alt="logo" />
+        </div>
+        <div class="content">
+            @*@if (Model != null) {
+                if (Model.ResetSuccessful) {
+                    <div class="alert alert-success fade in" id="spnConfirmation" style="text-align: left">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button"></button>
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button"></button>
+                        Success! Enter your email address and password below to login.
+                    </div>
+                    <br />
+                }
+            }*@
+            <h3 class="form-title">System Login</h3>
+            <div class="form-group">
+                @*<div style="color: red; font-weight: 300; font-size: 12px;">@ViewBag.errormessage</div>*@
+            </div>
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">Email</label>
+                <div class="input-icon">
+                    <i class="fa fa-envelope-o"></i>
+                    @Html.TextBoxFor(m => m.Email, new { @maxlength = "100", @class = "form-control input-lg placeholder-no-fix validate[required,custom[email]]", placeholder = "Email", type = "email", style = "width: 100% !important;" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">Password</label>
+                <div class="input-icon">
+                    <i class="fa fa-lock"></i>
+                    @Html.PasswordFor(m => m.Password, new { maxlength = "50", @class = "form-control input-lg placeholder-no-fix validate[required]", placeholder = "Password", style = "width: 100% !important;" })
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-lg green pull-right" id="login" name="login">
+                    Login <i class="m-icon-swapright m-icon-white"></i>
+                </button>
+            </div>
+            <div class="forget-password">
+                
+              
+            </div>
+        </div>
+       
+    }
+    <script type="text/javascript">
+        (function ($) {
+            $(document).ready(function () {
+                Metronic.init();
+                $("#frmLogin").validationEngine();
+                $("#forgotpwd").on("click", function () {
+                    var email = $("#Email1").val();
+                    window.location.href = "@Url.Action("ForgotPass","Person")?email=" + email;
+                });
+                var check = '@checkStatus';
+                if (check != "" && check != null && check != undefined)
+                    $('#loginAlert').modal("show");
+            });
+            $(document).on('click', '#login', function (e) {
+                if ($("#frmLogin").validationEngine('validate')) {
+                    Metronic.blockUI(
+                    {
+                        boxed: true,
+                        overlayCSS: {
+                            backgroundColor: '#000',
+                            opacity: 0.9,
+                            cursor: 'wait'
+                        }
+                    });
+                    setTimeout("$('#spinner').attr('src','/assets/img/loading-spinner-default.gif');", 100);
+                }
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>

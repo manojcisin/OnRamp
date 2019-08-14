@@ -1,0 +1,10 @@
+.vs/
+OnRamp.BusinessLayer/obj/
+OnRamp.DataLayer/bin/
+OnRamp.BusinessLayer/bin/
+OnRamp.DataLayer/obj/
+OnRamp/obj/
+packages/
+OnRamp/bin/
+OnRamp.Model/obj/
+OnRamp.Model/bin/

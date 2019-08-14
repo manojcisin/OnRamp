@@ -1,0 +1,45 @@
+﻿<li data-highlight="active" role="noitem" id="dashboard" class="checkClass">
+    <a href="/">
+        <i class="icon-pie-chart"></i>
+        <span class="title">Dashboard</span>
+        <span class="selected"></span>
+    </a>
+</li>
+<li data-highlight="active" id="ticket" class="checkClass">
+    <a href="#">
+        <i class="fa fa-unlink"></i>
+        <span class="title">Ticket System</span>
+        <span id="spn_ticket" class="selected"></span>
+        <span class="arrow "></span>
+    </a>
+    <ul class="sub-menu">
+        <li data-highlight="active" class="subClass" id="liTicketList">
+            <a href="@Url.Action("index", "ticket")">
+                <i class="icon-list"></i>
+                <span class="title">Tickets</span>
+                <span class="selected"></span>
+            </a>
+        </li>
+        <li data-highlight="active" class="subClass" id="liCreateTicket">
+            <a href="@Url.Action("EditTicket", "ticket")">
+                <i class="fa fa-plus"></i>
+                <span class="title">Create Ticket</span>
+                <span class="selected"></span>
+            </a>
+        </li>
+        <li data-highlight="active" class="subClass" id="liTicketReport">
+            <a href="@Url.Action("TicketReport", "ticket")">
+                <i class="fa fa-list"></i>
+                <span class="title">Ticket Report</span>
+                <span class="selected"></span>
+            </a>
+        </li>
+    </ul>
+</li>
+<li id="FAQpages" class="checkclass">
+    <a href="@Url.Action("Index", "FAQ")">
+        <i class="icon-question"></i>
+        <span class="title">FAQ</span>
+        <span class="selected"></span>
+    </a>
+</li>

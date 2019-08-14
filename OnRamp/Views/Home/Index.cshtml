@@ -1,0 +1,256 @@
+﻿
+@{
+    ViewBag.Title = "Edit Locations";
+}
+<script type="text/javascript" language="javascript">
+    $("#systemManagement").addClass("active");
+    $("#liStorelocations").addClass("active");
+    $(function () {
+        /*** this is used to not allowed
+        whitespace in Location textbox ***/
+        $('#LNumber').keypress(function (e) {
+            if (e.which === 32)
+                return false;
+        });
+
+    });
+</script>
+@using (Html.BeginForm("EditLocation", "Location", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmLocation", @class = "form-horizontal" })) {
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="page-breadcrumb">
+                <li>
+                    @Html.ActionLink("Location Management", "StoreLocations", "Location")
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    Add / Edit Location
+                </li>
+            </ul>
+
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-pencil-square"></i>Edit Information
+                    </div>
+                </div>
+
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label classLeft" for="LNumber">
+                                Locaton Number <span class="required">* </span>
+                            </label>
+                            <div class="col-md-3">
+                                @*@Html.TextBoxFor(m => m.LNumber, new { @class = "form-control input-medium validate[required]", maxlength = 50 })*@
+                                <div class=""><span style="color:red" id="hdnLNumber"></span></div>
+                                <span style="font-size:9pt">
+                                    @*<i>Must be in the format ABC1234, where ABC is the retailer acronym and 1234 is the store number. The acronym can be 2 or 3 letters. The store number can be 1 to 5 digits. Do not add leading zeros.</i>*@
+                                    <i>Use numbers only. Do not add leading zeros.</i>
+                                </span>
+
+                            </div>
+
+                            <label class="col-md-2 control-label classLeft" for="LPhone">
+                                Phone
+                            </label>
+                            <div class="col-md-3">
+                                @*@Html.TextBoxFor(m => m.LPhone, new { @class = "form-control input-medium mask_phone", placeholder = "(999) 999-9999", maxlength = 20 })*@
+                            </div>
+                        </div>
+
+                        <h3 class="form-section">Address Information</h3>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label classLeft" for="LAddress1">
+                                Address
+                            </label>
+                            <div class="col-md-3">
+                                @*@Html.TextBoxFor(m => m.LAddress1, new { @class = "form-control input-medium", onblur = "getLatLong();", maxlength = 50 })*@
+                            </div>
+
+                            <label class="col-md-2 control-label classLeft" for="LAddress2">
+                                Address 2
+                            </label>
+                            <div class="col-md-3">
+                                @*@Html.TextBoxFor(m => m.LAddress2, new { @class = "form-control input-medium ", @maxlength = 50 })*@
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label classLeft" for="LCity">
+                                City
+                            </label>
+                            <div class="col-md-3">
+                                @*@Html.TextBoxFor(m => m.LCity, new { @class = "form-control input-medium", onblur = "getLatLong();", @maxlength = 50 })*@
+                            </div>
+
+                            <label class="col-md-2 control-label classLeft" for="LState">
+                                State
+                            </label>
+                            <div class="col-md-3">
+                                @*@Html.DropDownListFor(m => m.LState, Model.StateList, new { @onchange = "getLatLong();", @class = "form-control input-medium" })*@
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label classLeft" for="LZip">
+                                Zip <span class="required">* </span>
+                            </label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    @*@Html.TextBoxFor(m => m.LZip, new { @maxlength = 10, onblur = "getLatLong();", @class = "form-control input-medium validate[required]" })*@
+                                </div>
+                            </div>
+                            <label class="col-md-2 control-label classLeft" for="LCountry">
+                                Country
+                            </label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    @*@Html.TextBoxFor(m => m.LCountry, new { @maxlength = 10, @class = "form-control input-medium" })*@
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label classLeft" for="Latitude">
+                                Latitude
+                            </label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    @*@Html.TextBoxFor(m => m.Latitude, new { @readonly = "readonly", @class = "form-control input-medium" })*@
+                                </div>
+                            </div>
+                            <label class="col-md-2 control-label classLeft" for="Longitude">
+                                Longitude
+                            </label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    @*@Html.TextBoxFor(m => m.Longitude, new { @readonly = "readonly", @class = "form-control input-medium" })*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group last">
+                            <label class="control-label col-md-2 classLeft" for="LocationImage">
+                                Image
+                            </label>
+                            <div class="col-md-3">
+                                @*@Html.EditorFor(m => m.LocationImage, "_PhotoUpload", new { photoSource = @Model.LImage })*@
+                            </div>
+                            <label class="control-label col-md-2 classLeft" for="LocationImage">
+                                Small Icon
+                            </label>
+                            <div class="col-md-3">
+                                @*@Html.EditorFor(m => m.IconImage, "_PhotoUpload", new { photoSource = @Model.IconUrl })*@
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="col-md-2 control-label classLeft">
+                                Status <span class="required">* </span>
+                            </label>
+                            <div class="col-md-3">
+                                @*@Html.DropDownListFor(m => m.StatusId, Model.StatusList, new { @class = "form-control input-small validate[required]" })*@
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label classLeft" for="LNote">
+                                Note
+                            </label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    @*@Html.TextAreaFor(m => m.LNote, new { @maxlength = 50, @class = "form-control input-medium" })*@
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions left">
+                        <a href="@Url.Action("StoreLocations", "Location")" class="btn default" id="btnBack">Cancel</a>
+                        <button type="submit" id="btnUpdate" class="btn blue" value="Submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script src="~/assets/scripts/custom/jquery.maskedinput.js"></script>
+
+<script type="text/javascript">
+
+    $("#dashboard").addClass("active");
+    //Except only numbers for textbox
+    function onlyNumbers(event) {
+        var charCode = (event.which) ? event.which : event.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    };
+
+    /**** to get the lat and long based
+    on city,address,zip and state  ****/
+    function getLatLong() {
+
+        var city = $("#LCity").val();
+        var state = $("#LState").val();
+        var zip = $("#LZip").val();
+        var address = $("#LAddress1").val();
+
+        if (address != "" && city != "" && state != "" && zip != "") {
+
+            var fullAddress = address + " " + city + " " + state + " " + zip;
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address': fullAddress }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var latitude = results[0].geometry.location.lat();
+                    var longitude = results[0].geometry.location.lng();
+                    $("#GeoLocation").val(latitude + "," + longitude);
+                    $("#Latitude").val(latitude);
+                    $("#Longitude").val(longitude);
+                }
+            });
+        }
+
+    };
+
+    (function ($) {
+        $(document).ready(function () {
+            $(".mask_phone").mask("(999) 999-9999");
+
+            Metronic.init();
+            $("#frmLocation").validationEngine();
+
+            $("#LNumber").live("blur", function () {
+
+                if ($(this).val() == "" || $(this).val() == null)
+                    return false;
+                var locations = $.get("@Url.Action("CheckLNumber", "Location")",{lNumber: $(this).val()});
+                locations.done(function (data) {
+                    if (data == true) {
+                        $("#hdnLNumber").text("");
+                    } else {
+                        var l = $("#LNumber").val();
+
+                        $("#hdnLNumber").text("Location Number "+l+" already exist");
+                        $("#LNumber").val("");
+                    }
+
+                });
+                locations.fail(function (jqXHR, textStatus, errorThrown) {
+
+                    console.error(errorThrown);
+                });
+            });
+        });
+    })(jQuery);
+</script>

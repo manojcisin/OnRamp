@@ -1,0 +1,172 @@
+﻿<html>
+<head id="Head1">
+    <title>@ViewBag.Title - OnRamp</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" />
+
+    @Styles.Render("~/bundles/content")
+    <link href="/assets/plugins/jquery-notific8/jquery.notific8.min.css" rel="stylesheet" />
+    <link href="/assets/css/custom.css" type="text/css" rel="stylesheet" />
+
+    <script src="/assets/plugins/jquery-1.11.0.min.js"></script>
+    <script src="/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/assets/plugins/jquery.blockui.min.js"></script>
+
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/metronic")
+    @Scripts.Render("~/bundles/jquery/plugins")
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+    <div class="page-wrapper">
+        <!-- BEGIN HEADER -->
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner">
+                <div class="page-logo">
+                    <img src="/assets/img/logo.png" alt="logo" class="logo-default" />
+                </div>
+
+            </div>
+        </div>
+        <!-- END HEADER -->
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <div id="my-dialog"></div>
+            <div class="page-sidebar-wrapper">
+                <div class="page-sidebar navbar-collapse collapse">
+                    <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false"
+                        data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                        <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                        <li class="sidebar-toggler-wrapper hide">
+                            <div class="sidebar-toggler">
+                                <span></span>
+                            </div>
+                        </li>
+                        
+                        <!-- END SIDEBAR TOGGLER BUTTON -->
+                        @Html.Partial("~/Views/Shared/Menus/_DefaultMenu.cshtml")
+                        <li id="supports" onclick="fnSupports();" class="checkClass">
+                            <a href="#feed-modal" data-toggle="modal">
+                                <i class="icon-support"></i>
+                                <span class="title">Support</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    @RenderBody()
+
+                    <div id="feed-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="feed-modallabel1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    <h4 class="modal-title">Support</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div>
+
+                                        <span style="color: grey">
+
+                                            Walmart VOLT Support
+                                        </span>
+                                    </div>
+                                    <p>
+                                        <div>
+                                            Use the form below to email our support team directly.
+                                        </div>
+                                    </p>
+                                    <div class="form-group">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea name="feedback" id="feedback" rows="6" cols="40" placeholder="Enter Feedback"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn default" data-dismiss="modal" id="Cancel">Cancel</button>
+                                    <button type="button" id="btnSubmit" class="btn green" data-dismiss="modal" value="Send">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div class="page-footer">
+            <div class="page-footer-inner">Walmart VOLT</div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!-- END FOOTER -->
+    </div>
+    <style type="text/css">
+        .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li:hover > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li.open > a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu > li.active > a,
+        .page-sidebar .page-sidebar-menu .sub-menu > li:hover > a,
+        .page-sidebar .page-sidebar-menu .sub-menu > li.open > a,
+        .page-sidebar .page-sidebar-menu .sub-menu > li.active > a {
+            /*background: #e98c1a !important;*/
+            border-top-color: transparent;
+            color: white;
+        }
+
+        ul.sub-menu .subClass.active {
+            position: relative;
+        }
+
+        .sub-menu .subClass.active .selected {
+            background-image: url('../../assets/img/sidebar-menu-arrow.png');
+            display: block;
+            float: right;
+            height: 25px;
+            position: absolute;
+            right: 0;
+            top: 2px;
+            width: 8px;
+        }
+    </style>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            Metronic.init();
+            Layout.init();
+
+            function fnSupports() {
+                $("#feed-modal").modal("show");
+            }
+
+            $.ajaxSetup({ cache: false });
+            $("form").submit(function () { }).change(function () { });
+        });
+    </script>
+
+</body>
+</html>
