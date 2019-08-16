@@ -26,5 +26,6 @@ namespace OnRamp.DataLayer.Context
         }
     
         public virtual DbSet<Tbl_Customers> Tbl_Customers { get; set; }
+        public virtual DbSet<Tbl_Suppliers> Tbl_Suppliers { get; set; }
     }
 }

@@ -206,6 +206,7 @@
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2658,6 +2659,7 @@
     <Content Include="assets\scripts\core\layout.js" />
     <Content Include="assets\scripts\core\metronic.js" />
     <Content Include="assets\scripts\core\quick-sidebar.js" />
+    <Content Include="assets\scripts\custom\bootbox.min.js" />
     <Content Include="assets\scripts\custom\calendar.js" />
     <Content Include="assets\scripts\custom\charts.js" />
     <Content Include="assets\scripts\custom\Common.js" />
@@ -3036,6 +3038,8 @@
     <Content Include="Scripts\jQueryRotate.js" />
     <Content Include="Scripts\knockout-3.3.0.debug.js" />
     <Content Include="Scripts\knockout-3.3.0.js" />
+    <Content Include="Scripts\knockout-3.5.0.debug.js" />
+    <Content Include="Scripts\knockout-3.5.0.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Pagination.js" />
     <Content Include="Scripts\table-editable.js" />
@@ -3055,6 +3059,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Shared\Menus\_DefaultMenu.cshtml" />
+    <Content Include="Views\Supplier\Index.cshtml" />
+    <Content Include="Views\Supplier\Edit.cshtml" />
+    <Content Include="Views\Supplier\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

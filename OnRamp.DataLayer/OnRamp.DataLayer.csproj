@@ -70,9 +70,14 @@
     <Compile Include="Context\Tbl_Customers.cs">
       <DependentUpon>OnRamp.tt</DependentUpon>
     </Compile>
+    <Compile Include="Context\Tbl_Suppliers.cs">
+      <DependentUpon>OnRamp.tt</DependentUpon>
+    </Compile>
     <Compile Include="IRepository.cs" />
     <Compile Include="IRepository\IRepositoryCustomer.cs" />
+    <Compile Include="IRepository\IRepositorySupplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RepositorySupplier.cs" />
     <Compile Include="Repository\RepositoryCustomer.cs" />
   </ItemGroup>
   <ItemGroup />
