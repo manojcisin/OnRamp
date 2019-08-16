@@ -4,7 +4,7 @@
 }
 
 
-<h2>Index</h2>
+<h2>Supplier</h2>
 
 <p>
     @Html.ActionLink("Add Supplier", "Add")
@@ -24,7 +24,7 @@
             <th>
                 SupplierTelephoneNumber
             </th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody data-bind="foreach: suppliers">
@@ -34,7 +34,7 @@
             <td data-bind="text: Supplier_Email"></td>
             <td data-bind="text: Supplier_Telephone_Number"></td>
             <td>
-                <a data-bind="attr: { 'href': '@Url.Action("Edit", "Supplier")/' + Supplier_ID }" class="btn-link">Edit</a>               
+                <a data-bind="attr: { 'href': '@Url.Action("Edit", "Supplier")/' + Supplier_ID }" class="btn-link">Edit</a>
                 <a class="btnDelete" data-bind="attr: { 'id': Supplier_ID }" id=Supplier_ID>Delete</a>
             </td>
         </tr>
@@ -84,7 +84,29 @@
                     contentType: 'application/json',
                     success: function (data) {
                         thisObj.suppliers(data); //Here we are assigning values to KO Observable array
-                        $("#suppliertable").DataTable();
+                        //$("#suppliertable").DataTable();
+                        $('#suppliertable').DataTable({
+                            dom: 'Bfrtip',
+                            "pageLength": 20,
+                            "lengthChange": true,                            
+                            buttons: [
+                                {
+                                    extend: 'excelHtml5', exportOptions: {
+                                        columns: [0, 1, 2, 3]
+                                    }
+                                },
+                                {
+                                    extend: 'csvHtml5', exportOptions: {
+                                        columns: [0, 1, 2, 3]
+                                    }
+                                },
+                                {
+                                    extend: 'pdfHtml5', exportOptions: {
+                                        columns: [0, 1, 2, 3]
+                                    }
+                                }
+                            ]
+                        });
                     },
                     error: function (err) {
                         alert(err.status + " : " + err.statusText);
