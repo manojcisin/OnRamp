@@ -10,6 +10,7 @@ namespace OnRamp.App_Start {
 	public class AutoMapperConfig {
 		public static void CreateMappings() {
 			AutoMapperHelper.CreateMapping<Tbl_Customers, Customers>();
+			AutoMapperHelper.CreateMapping<Tbl_Product_Category, Category>();
 			AutoMapperHelper.CreateMapping<Tbl_Suppliers, Suppliers>();
 		}
 	}

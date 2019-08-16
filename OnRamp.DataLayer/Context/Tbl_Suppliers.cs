@@ -14,9 +14,18 @@ namespace OnRamp.DataLayer.Context
     
     public partial class Tbl_Suppliers
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tbl_Suppliers()
+        {
+            this.Tbl_Products = new HashSet<Tbl_Products>();
+        }
+    
         public int Supplier_ID { get; set; }
         public string Supplier_Name { get; set; }
         public string Supplier_Email { get; set; }
         public string Supplier_Telephone_Number { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tbl_Products> Tbl_Products { get; set; }
     }
 }

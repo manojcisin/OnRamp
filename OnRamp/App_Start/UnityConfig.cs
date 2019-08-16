@@ -43,6 +43,8 @@ namespace OnRamp.App_Start
 			// container.RegisterType<IProductRepository, ProductRepository>();
 			container.RegisterType<IRepositoryCustomerBL, RepositoryCustomerBL>();
 			container.RegisterType<IRepositoryCustomer, RepositoryCustomer>();
+			container.RegisterType<IRepositoryCategoryBL, RepositoryCategoryBL>();
+			container.RegisterType<IRepositoryCategory, RepositoryCategory>();
 
 			container.RegisterType<IRepositorySupplierBL, RepositorySupplierBL>();
 			container.RegisterType<IRepositorySupplier, RepositorySupplier>();

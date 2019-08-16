@@ -203,9 +203,11 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -213,6 +215,9 @@
     <Compile Include="Helpers\SessionManager.cs" />
     <Compile Include="Link\RootLinks.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2804,6 +2809,9 @@
     <Content Include="images\switch.png" />
     <Content Include="images\target.jpg" />
     <Content Include="images\user.jpg" />
+    <Content Include="obj\Debug\OnRamp.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\OnRamp.dll" />
+    <Content Include="obj\Debug\OnRamp.pdb" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\img\Thumbs.db" />
@@ -3015,6 +3023,10 @@
     <Content Include="assets\plugins\uniform\README.md" />
     <Content Include="assets\scripts\custom\highslide\graphics\outlines\Outlines.psd" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\OnRamp.csproj.CopyComplete" />
+    <Content Include="obj\Debug\OnRamp.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\OnRamp.csprojAssemblyReference.cache" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
@@ -3062,6 +3074,7 @@
     <Content Include="Views\Supplier\Index.cshtml" />
     <Content Include="Views\Supplier\Edit.cshtml" />
     <Content Include="Views\Supplier\Add.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3088,7 +3101,9 @@
     <Folder Include="assets\plugins\jquery-validation\test\qunit\" />
     <Folder Include="assets\plugins\jquery-validation\test\selects\" />
     <Folder Include="assets\plugins\plupload\examples\upload\" />
-    <Folder Include="Views\Customer\" />
+    <Folder Include="Mappers\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

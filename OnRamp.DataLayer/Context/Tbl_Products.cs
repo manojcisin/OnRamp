@@ -23,7 +23,7 @@ namespace OnRamp.DataLayer.Context
         public Nullable<int> Product_Warranty { get; set; }
         public Nullable<int> Product_Status { get; set; }
     
-        public virtual Tbl_Suppliers Tbl_Suppliers { get; set; }
         public virtual Tbl_Product_Category Tbl_Product_Category { get; set; }
+        public virtual Tbl_Suppliers Tbl_Suppliers { get; set; }
     }
 }
