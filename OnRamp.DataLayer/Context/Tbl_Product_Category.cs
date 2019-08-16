@@ -12,20 +12,19 @@ namespace OnRamp.DataLayer.Context
     using System;
     using System.Collections.Generic;
     
-    public partial class Tbl_Customers
+    public partial class Tbl_Product_Category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tbl_Customers()
+        public Tbl_Product_Category()
         {
-            this.Tbl_Orders = new HashSet<Tbl_Orders>();
+            this.Tbl_Products = new HashSet<Tbl_Products>();
         }
     
-        public int Customer_ID { get; set; }
-        public string Customer_Name { get; set; }
-        public string Customer_Email { get; set; }
-        public string Customer_Telephone_Number { get; set; }
+        public int Category_ID { get; set; }
+        public string Category_Name { get; set; }
+        public string Category_Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tbl_Orders> Tbl_Orders { get; set; }
+        public virtual ICollection<Tbl_Products> Tbl_Products { get; set; }
     }
 }

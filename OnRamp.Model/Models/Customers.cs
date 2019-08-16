@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace OnRamp.Model.Models {
+
 	public class Customers {
-		public int CustomerID { get; set; }
-		public string CustomerName { get; set; }
-		public string CustomerEmail { get; set; }
-		public string CustomerTelephoneNumber { get; set; }
+		public int Customer_ID { get; set; }
+		public string Customer_Name { get; set; }
+		public string Customer_Email { get; set; }
+		public string Customer_Telephone_Number { get; set; }
 	}
 }

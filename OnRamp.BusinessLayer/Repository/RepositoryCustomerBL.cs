@@ -16,9 +16,27 @@ namespace OnRamp.BusinessLayer.Repository {
 			mapCustomers = new Mapper<Tbl_Customers, Customers>();
 		}
 
-		public List<Customers> GetCustomerList() {
-			List<Customers> customerList = iRepositoryCustomer.GetCustomerList().Select(mapCustomers.MapTo).ToList();
-			return customerList;
+		public List<Customers> GetCusotmerList() {
+		return iRepositoryCustomer.GetCustomerList().Select(mapCustomers.MapTo).ToList();
+		}
+
+		public Customers AddCustomer(Customers customers) {
+			var result = iRepositoryCustomer.AddCustomer(mapCustomers.MapFrom(customers));
+			return mapCustomers.MapTo(result);
+		}
+
+		public Customers UpdateCustomer(Customers customers) {
+			var result = iRepositoryCustomer.UpdateCustomer(mapCustomers.MapFrom(customers));
+			return mapCustomers.MapTo(result);
+		}
+
+		public Customers GetCustomerById(int id) {
+			var result = iRepositoryCustomer.GetCustomerById(id);
+			return mapCustomers.MapTo(result);
+		}
+
+		public bool RemoveCustomer(int id) {
+			return iRepositoryCustomer.RemoveCustomer(id);
 		}
 	}
 }

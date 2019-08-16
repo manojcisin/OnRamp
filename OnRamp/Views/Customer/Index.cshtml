@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "Supplier List";
+
+}
+
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="/" onclick="return fnHome();">
+                Home
+            </a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="javascript:;">Customers</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+
+    </ul>
+</div>
+<h1 class="page-title">
+    Customers
+</h1>
+<div class="row">
+
+    <div class="col-md-6">
+
+
+        <!-- BEGIN PORTLET-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-bar-chart-o"></i> <span id="spnCustomer"></span> - Customers
+                </div>
+                <div class="tools">
+                    <a class="collapse" href="javascript:;"></a>
+                </div>
+                <div class="actions">
+                    <a href="javascript:void(0);" id="exportSupplier" class="btn btn-default btn-sm" style="margin-right: 11px;">Export</a>
+                </div>
+            </div>
+            <!--BEGIN AccountType management-->
+            <div class="portlet-body" id="divCustomer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-toolbar"></div>
+                        <div id="divTableCustomer" style="display: none;" class="table-responsive">
+                            <table id="tblCustomers" class="table table-striped table-hover table-bordered table-responsive table-layout-auto">
+                                <thead>
+                                    <tr>
+                                        <th role="0">Customer Name</th>
+                                        <th role="1">Customer Email</th>
+                                        <th role="2">Customer Number</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--END AccountType Management -->
+        </div>
+        <!-- END PORTLET-->
+
+
+
+    </div>
+    <div class="col-md-6">
+    </div>
+
+</div>
+
+<script src="~/assets/scripts/custom/jquery.dataTables.js"></script>
+<script src="~/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+
+<script type="text/javascript">
+
+    /*********this is used to bind the table with supplier list using datatable***********/
+    function fnCustomerList(columnIndex, sortingOrder) {
+
+     $("#tblCustomers").dataTable({
+      bDeferRender: true,
+      bAutoWidth: false,
+      bPaginate: true,
+      bFilter: true,
+      bInfo: true,
+      bServerSide: true,
+      bDestroy: true,
+      sAjaxSource: "@Url.Action("GetJsonCustomerList", "Customer")?columnIndex=" + columnIndex + "&sortingOrder=" + sortingOrder,
+      bProcessing: true,
+      error: "none",
+        });
+
+        $("#divTableCustomer").show();
+        Metronic.unblockUI("#divCustomer");
+  
+  }
+
+  $(function() {
+      fnCustomerList(0, "asc");
+ 
+
+             /*********this is used to export supplier list***********/
+             $("#exportSupplier").click(function () {
+
+                 //var searchText = "";
+                 //if (typeof ($("#tblSuppliers_info").html()) !== "undefined" && ($("#tblSuppliers_info").html() !== "" || $("#tblSuppliers_info").html() !== null))
+                 //    total = $("#tblSuppliers_info").html().split(' ').reverse()[1].replace(',', '');
+                 //if (typeof $('.dataTables_filter input').val() != 'undefined') {
+                 //    searchText = $('.dataTables_filter input').val().toString().trim();
+                 //}
+
+
+                 //window.location.href = "/Supplier/ExportSupplierList?searchText=" + searchText + "&total=" + total;
+        });
+
+  });
+        
+
+
+</script>
+
+

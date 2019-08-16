@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using OnRamp.Model.Models;
 
 
 namespace OnRamp.BusinessLayer.IRepository {
 	public interface IRepositoryCustomerBL {
-		List<Customers> GetCustomerList();
+		List<Customers> GetCusotmerList();
+		Customers AddCustomer(Customers customers);
+		Customers UpdateCustomer(Customers customers);
+		Customers GetCustomerById(int id);
+		bool RemoveCustomer(int id);
 	}
 }
