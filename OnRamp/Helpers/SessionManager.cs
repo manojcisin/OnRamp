@@ -1,4 +1,5 @@
-﻿using OnRamp.Models;
+﻿using OnRamp.Model.Models;
+using OnRamp.Models;
 using System.Web;
 
 
@@ -37,6 +38,6 @@ namespace OnRamp.Helpers {
         }
         #endregion
 
-        public UserModel CurrentUser { get; set; }
+        public User CurrentUser { get; set; }
     }
 }

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using OnRamp.Model.Models;
 
 namespace OnRamp.Controllers {
+	[Authorize]
 	public class SupplierController : Controller {
 
 		private readonly IRepositorySupplierBL iRepositorySupplierBL;
