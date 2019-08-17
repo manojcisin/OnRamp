@@ -63,7 +63,8 @@
                         $.get("/Supplier/Delete?id=" + e.target.id, function (data) {
                             if (data) {
                                 bootbox.alert("Supplier deleted successfully!");
-                                $("#suppliertable tbody").empty();
+                               // $("#suppliertable tbody").empty();
+                               // this.suppliers = [];
                                 modelView.viewSuppliers();
                             }
                         })
@@ -72,6 +73,9 @@
             });
         });
     });
+
+
+
     var modelView = {
         suppliers: ko.observableArray([]),
         viewSuppliers: function () {

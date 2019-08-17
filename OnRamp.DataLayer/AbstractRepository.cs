@@ -17,7 +17,7 @@ namespace OnRamp.DataLayer {
 
 		protected AbstractRepository() {
 			context = new onrampEntities();
-			context.Configuration.ProxyCreationEnabled = false;
+			//context.Configuration.ProxyCreationEnabled = false;
 			//context.Configuration.LazyLoadingEnabled = false;
 		}
 		protected virtual onrampEntities Context

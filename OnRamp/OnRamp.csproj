@@ -3075,6 +3075,7 @@
     <Content Include="Views\Supplier\Edit.cshtml" />
     <Content Include="Views\Supplier\Add.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Product\AddProductView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3103,7 +3104,6 @@
     <Folder Include="assets\plugins\plupload\examples\upload\" />
     <Folder Include="Mappers\" />
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

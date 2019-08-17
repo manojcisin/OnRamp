@@ -12,25 +12,26 @@ namespace OnRamp.BusinessLayer.Repository {
 	public class RepositoryProductBL : IRepositoryProductBL {
 
 		private readonly IRepositoryProduct iRepositoryProduct;
-		public readonly Mapper<Tbl_Products, Products> mapCustomers = null;
+		public readonly Mapper<Tbl_Products, Products> mapProducts = null;
 
 		public RepositoryProductBL(IRepositoryProduct repositoryProduct) {
 			iRepositoryProduct = repositoryProduct;
-			mapCustomers = new Mapper<Tbl_Products, Products>();
+			mapProducts = new Mapper<Tbl_Products, Products>();
 		}
 
 		public List<Products> GetProductList() {
-			try {
-				List<Products> customerList = iRepositoryProduct.GetProductList().Select(mapCustomers.MapTo).ToList();
-				return customerList;
-			}
-			catch (Exception ex) {
-				throw ex;
-
-			}
+			List<Products> customerList = iRepositoryProduct.GetProductList().Select(mapProducts.MapTo).ToList();
+			return customerList;
 		}
 
+		public Products Add(Products product) {
+			var result = iRepositoryProduct.Add(mapProducts.MapFrom(product));
+			return mapProducts.MapTo(result) ;
+		}
 
+		public object GetProductInStocks() {
+			return iRepositoryProduct.GetProductInStocks();
+		}
 
 	}
 }
