@@ -14,7 +14,7 @@ namespace OnRamp.DataLayer.Repository {
 			return Context.Tbl_Products.ToList();
 		}
 
-		public Tbl_Products Add(Tbl_Products products) {
+		public Tbl_Products Add(Tbl_Products products) {			
 			Context.Tbl_Products.Add(products);
 			Context.SaveChanges();
 			products.Product_Barcode = products.Product_Barcode;
@@ -30,7 +30,7 @@ namespace OnRamp.DataLayer.Repository {
 			return result;
 		}
 		public List<ProductDetail> GetProductListForDashBoard() {
-			List<ProductDetail> products = Context.Tbl_Products.AsEnumerable().OrderBy(x=>x.Product_Name)
+			List<ProductDetail> productDetail = Context.Tbl_Products.AsEnumerable().OrderBy(x=>x.Product_Name)
 				.Select(x => new ProductDetail {
 					Product_Barcode = x.Product_Barcode,
 					Product_Category = x.Tbl_Product_Category.Category_Name,
@@ -41,7 +41,22 @@ namespace OnRamp.DataLayer.Repository {
 					Product_Warranty = x.Product_Warranty,
 					Supplier_Name  = x.Tbl_Suppliers.Supplier_Name
 				}).ToList();
-			return products;
+			return productDetail;
+		}
+
+		public ProductDetail GetProductDetailById(int id) {
+			var result = Context.Tbl_Products.Where(x => x.Product_Barcode == id).FirstOrDefault();
+			ProductDetail productDetail = new ProductDetail {
+				Product_Barcode = result.Product_Barcode,
+				Product_Category = result.Tbl_Product_Category.Category_Name,
+				Product_Date = result.Product_Date_Captured.ToShortDateString(),
+				Product_Location = result.Product_Location,
+				Product_Name = result.Product_Name,
+				Product_Status = ((ProductStatus)result.Product_Status).ToString(),
+				Product_Warranty = result.Product_Warranty,
+				Supplier_Name = result.Tbl_Suppliers.Supplier_Name
+			};
+			return productDetail;
 		}
 	}
 }

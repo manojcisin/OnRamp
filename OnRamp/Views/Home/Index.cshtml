@@ -47,11 +47,11 @@
         <table id="producttable" class="table table-striped" cellspacing="0" width="100%">
             <thead>
                 <tr>
+                    @*<th>
+                        S.no
+                    </th>*@
                     <th>
                         Barcode
-                    </th>
-                    <th>
-                        S.no
                     </th>
                     <th>
                         Name
@@ -78,15 +78,15 @@
             </thead>
             <tbody data-bind="foreach: products">
                 <tr>
+                    @*<td data-bind="text: ($index() + 1)"></td>*@
                     <td data-bind="text: Product_Barcode"></td>
-                    <td data-bind="text: ($index() + 1)"></td>
                     <td data-bind="text: Product_Name"></td>
                     <td data-bind="text: Product_Category"></td>
                     <td data-bind="text: Product_Date"></td>
                     <td data-bind="text: Product_Location"></td>
                     <td data-bind="text: Supplier_Name"></td>
                     <td data-bind="text: Product_Warranty"></td>
-                    <td data-bind="text: Product_Status"></td>                    
+                    <td data-bind="text: Product_Status"></td>
                 </tr>
             </tbody>
         </table>
@@ -125,7 +125,7 @@
     });
 
 
-    var modelView = {        
+    var modelView = {
         products: ko.observableArray([]),
         viewProducts: function () {
             var thisObj = this;
@@ -158,7 +158,7 @@
                                     }
                                 }
                             ]
-                        }).column(0).visible(false);
+                        })//.column(0).visible(false);
 
                     },
                     error: function (err) {
@@ -168,9 +168,12 @@
             } catch (e) {
                 //window.location.href = '/Home/Read/';
             }
+        },
+        addProduct: function (data) {            
+            this.products.push(data);
         }
     };
-        
+
 
     function GetOutStandingPayment() {
         $.get("/Order/GetOutstandingPayments", function (data) {
@@ -186,7 +189,14 @@
 
     function GetProductListForDashBoard() {
         $.get("/Product/GetProductListForDashBoard", function (data) {
-            debugger
+            modelView.products = [];
+            modelView.products = data;
+        });
+    }
+
+    function GetProductDetailById(id) {
+        $.get("/Product/GetProductDetailById?id=" + id, function (data) {
+            modelView.addProduct(data);
         });
     }
 
@@ -240,13 +250,16 @@
     function AddProduct() {
         $.get("/Product/AddProductView", function (data) {
             $("#modalbody").html(data);
-            $("#productmodal").modal("show");            
+            $("#productmodal").modal("show");
         });
     }
 
     function OnSuccess(response) {
         $("#productmodal").modal("hide");
-        bootbox.alert("Product added successfully!");        
+        GetProductDetailById(response.Product_Barcode);
+        bootbox.alert("Product added successfully!");
+        //GetProductListForDashBoard();
+
     }
     function OnFailure(response) {
         alert("Error occured.");

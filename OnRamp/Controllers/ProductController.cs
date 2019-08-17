@@ -48,5 +48,10 @@ namespace OnRamp.Controllers {
 			return Json(result, JsonRequestBehavior.AllowGet);
 		}
 
+		public JsonResult GetProductDetailById(int id) {
+			var result = iRepositoryProductBL.GetProductDetailById(id);
+			return Json(result, JsonRequestBehavior.AllowGet);
+		}
+
 	}
 }

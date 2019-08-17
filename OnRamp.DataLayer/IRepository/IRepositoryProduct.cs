@@ -12,5 +12,6 @@ namespace OnRamp.DataLayer.IRepository {
 		Tbl_Products Add(Tbl_Products products);
 		object GetProductInStocks();
 		List<ProductDetail> GetProductListForDashBoard();
+		ProductDetail GetProductDetailById(int id);
 	}
 }

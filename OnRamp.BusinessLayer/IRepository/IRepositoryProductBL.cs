@@ -7,5 +7,6 @@ namespace OnRamp.BusinessLayer.IRepository {
 		Products Add(Products product);
 		object GetProductInStocks();
 		List<ProductDetail> GetProductListForDashBoard();
+		ProductDetail GetProductDetailById(int id);
 	}
 }
