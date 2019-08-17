@@ -2,6 +2,7 @@
 using OnRamp.Model.Models;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace OnRamp.Controllers {
 	public class CategoryController : BaseController {
@@ -22,8 +23,8 @@ namespace OnRamp.Controllers {
 		}
 
 		public ActionResult AddCategory(Category categories) {
-			Category result = iRepositoryCategoryBL.AddCategory(categories);
-			return RedirectToAction("Index");
+				Category result = iRepositoryCategoryBL.AddCategory(categories);
+			return Json(result, JsonRequestBehavior.AllowGet);
 		}
 
 		public JsonResult GetList() {
@@ -31,14 +32,16 @@ namespace OnRamp.Controllers {
 			return Json(categories, JsonRequestBehavior.AllowGet);
 		}
 
-		public ActionResult Edit(int id) {
+		public ActionResult Edit(int id)  {
 			Category category = iRepositoryCategoryBL.GetCategoryById(id);
+			var serializer = new JavaScriptSerializer();
+			ViewBag.category = serializer.Serialize(category);
 			return View(category);
 		}
 
 		public ActionResult Update(Category category) {
 			Category result = iRepositoryCategoryBL.UpdateCategory(category);
-			return RedirectToAction("Index");
+			return Json(result, JsonRequestBehavior.AllowGet);
 		}
 
 		public JsonResult Delete(int id) {

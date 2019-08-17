@@ -1,60 +1,47 @@
-﻿@model OnRamp.Model.Models.Suppliers
-
-@{
+﻿@{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <h2>Edit</h2>
-
-@using (Html.BeginForm("Update","Supplier",FormMethod.Post))
-{
+@using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Suppliers</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Supplier_ID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Supplier_ID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Supplier_ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Supplier_Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Supplier_Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Supplier_Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Supplier_Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Supplier_Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Supplier_Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Supplier_Telephone_Number, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Supplier_Telephone_Number, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Supplier_Telephone_Number, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+<div class="form-horizontal">
+    <div class="form-group hidden">
+        <label class="control-label col-md-2" for="Supplier_ID">Supplier_ID</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="Supplier_ID" name="Supplier_ID" type="hidden" value="" data-bind="value: Supplier_ID">
         </div>
     </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Supplier_Name">Supplier_Name</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="Supplier_Name" name="Supplier_Name" type="text" value="" data-bind="value: Supplier_Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Supplier_Email">Supplier_Email</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="Supplier_Email" name="Supplier_Email" type="text" value="" data-bind="value: Supplier_Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Supplier_Telephone_Number">Supplier_Telephone_Number</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="Supplier_Telephone_Number" name="Supplier_Telephone_Number" type="text" value="" data-bind="value: Supplier_Telephone_Number">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" data-bind="click: updateSupplier" value="Update" class="btn btn-default">
+        </div>
+    </div>
+</div>
 }
-
+<script type="text/javascript">
+    var selectedSupplier = '@Html.Raw(ViewBag.supplier)';
+</script>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+<script src="~/assets/knockoutjs/KOUpdateSupplier.js"></script>

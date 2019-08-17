@@ -1,54 +1,44 @@
 ﻿
-@model OnRamp.Model.Models.Category
-
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <h2>Edit</h2>
-
-@using (Html.BeginForm("Update", "Category", FormMethod.Post)) {
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>Category</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Category_ID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Category_ID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Category_ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Category_Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Category_Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Category_Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Category_Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Category_Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Category_Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+@using (Html.BeginForm()) {
+    @*@Html.AntiForgeryToken()*@
+<div class="form-horizontal">
+    <div class="form-group hidden">
+        <label class="control-label col-md-2" for="Category_ID">Category_ID</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="Category_ID" name="Category_ID" type="hidden" value="" data-bind="value: Category_ID">
         </div>
     </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Category_Name">Category_Name</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="Category_Name" name="Category_Name" type="text" value="" data-bind="value: Category_Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Category_Description">Category_Description</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="Category_Description" name="Category_Description" type="text" value="" data-bind="value: Category_Description">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" data-bind="click: updateCategory" value="Update" class="btn btn-default">
+        </div>
+    </div>
+</div>
 }
-
+<script type="text/javascript">
+    var selectedCategory = '@Html.Raw(ViewBag.category)';
+</script>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+<script src="~/assets/knockoutjs/KOUpdateCategory.js"></script>
 
 
