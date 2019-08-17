@@ -30,7 +30,7 @@ namespace OnRamp.DataLayer.Repository {
 			return result;
 		}
 		public List<ProductDetail> GetProductListForDashBoard() {
-			List<ProductDetail> productDetail = Context.Tbl_Products.AsEnumerable().OrderBy(x=>x.Product_Name)
+			List<ProductDetail> productDetail = Context.Tbl_Products.AsEnumerable().OrderByDescending(x=>x.Product_Name)
 				.Select(x => new ProductDetail {
 					Product_Barcode = x.Product_Barcode,
 					Product_Category = x.Tbl_Product_Category.Category_Name,
