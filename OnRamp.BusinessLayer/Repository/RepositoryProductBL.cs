@@ -33,5 +33,9 @@ namespace OnRamp.BusinessLayer.Repository {
 			return iRepositoryProduct.GetProductInStocks();
 		}
 
+		public List<ProductDetail> GetProductListForDashBoard() {
+			return iRepositoryProduct.GetProductListForDashBoard();
+		}
+
 	}
 }

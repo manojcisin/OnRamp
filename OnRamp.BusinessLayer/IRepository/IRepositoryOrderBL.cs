@@ -4,5 +4,7 @@ using System.Collections.Generic;
 namespace OnRamp.BusinessLayer.IRepository {
 	public interface IRepositoryOrderBL {
 		List<Orders> GetOrderList();
+		int GetOrderForMonth();
+		int GetOutstandingPayments();
 	}
 }

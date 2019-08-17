@@ -25,6 +25,16 @@ namespace OnRamp.Controllers {
 			return Json(orders, JsonRequestBehavior.AllowGet);
 		}
 
-		
+		public JsonResult GetOrderForMonth() {
+			var result = iRepositoryOrderBL.GetOrderForMonth();
+			return Json(result, JsonRequestBehavior.AllowGet);
+		}
+
+		public JsonResult GetOutstandingPayments() {
+			var result = iRepositoryOrderBL.GetOutstandingPayments();
+			return Json(result, JsonRequestBehavior.AllowGet);
+		}
+
+
 	}
 }

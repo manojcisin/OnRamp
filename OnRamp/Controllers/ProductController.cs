@@ -18,13 +18,10 @@ namespace OnRamp.Controllers {
 			iRepositoryCategoryBL = repositoryCategoryBL;
 			iRepositorySupplierBL = repositorySupplierBL;
 		}
-
-		// GET: Product
-		public ActionResult Index() {
-			List<Products> products = iRepositoryProductBL.GetProductList();
+				
+		public ActionResult Index() {			
 			return View();
 		}
-
 
 		public ActionResult AddProductView() {
 			ViewBag.CategoryList = iRepositoryCategoryBL.GetCategoryList()
@@ -45,5 +42,11 @@ namespace OnRamp.Controllers {
 			var result = iRepositoryProductBL.GetProductInStocks();
 			return Json(result, JsonRequestBehavior.AllowGet);
 		}
+
+		public JsonResult GetProductListForDashBoard() {
+			var result = iRepositoryProductBL.GetProductListForDashBoard();
+			return Json(result, JsonRequestBehavior.AllowGet);
+		}
+
 	}
 }

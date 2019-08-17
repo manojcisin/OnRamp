@@ -95,7 +95,12 @@
     <Compile Include="Repository\RepositorySupplier.cs" />
     <Compile Include="Repository\RepositoryCustomer.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\OnRamp.Model\OnRamp.Model.csproj">
+      <Project>{C4D9FDCC-90BE-4C41-A8DC-21E32ABB99E1}</Project>
+      <Name>OnRamp.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Context\OnRamp.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

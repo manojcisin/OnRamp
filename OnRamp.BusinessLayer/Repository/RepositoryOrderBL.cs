@@ -29,12 +29,20 @@ namespace OnRamp.BusinessLayer.Repository {
 						  Customer_Name = p.Tbl_Customers.Customer_Name,
 						  Date_Sold = p.Date_Sold,
 						  Payment_Received = p.Payment_Received
-						 
-				  }).ToList();
+
+					  }).ToList();
 
 
 			return orders.ToList();
 
+		}
+
+		public int GetOrderForMonth() {
+			return iRepositoryOrder.GetOrderForMonth();
+		}
+
+		public int GetOutstandingPayments() {
+			return iRepositoryOrder.GetOutstandingPayments();
 		}
 	}
 }

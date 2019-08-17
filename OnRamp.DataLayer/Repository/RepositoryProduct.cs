@@ -1,5 +1,6 @@
 ﻿using OnRamp.DataLayer.Context;
 using OnRamp.DataLayer.IRepository;
+using OnRamp.Model.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,20 @@ namespace OnRamp.DataLayer.Repository {
 					ProductCount = x.Tbl_Products.ToList().Count()
 				}).ToList();			
 			return result;
+		}
+		public List<ProductDetail> GetProductListForDashBoard() {
+			List<ProductDetail> products = Context.Tbl_Products.AsEnumerable().OrderBy(x=>x.Product_Name)
+				.Select(x => new ProductDetail {
+					Product_Barcode = x.Product_Barcode,
+					Product_Category = x.Tbl_Product_Category.Category_Name,
+					Product_Date = x.Product_Date_Captured.ToShortDateString(),
+					Product_Location = x.Product_Location,
+					Product_Name = x.Product_Name,
+					Product_Status = ((ProductStatus)x.Product_Status).ToString(),
+					Product_Warranty = x.Product_Warranty,
+					Supplier_Name  = x.Tbl_Suppliers.Supplier_Name
+				}).ToList();
+			return products;
 		}
 	}
 }
