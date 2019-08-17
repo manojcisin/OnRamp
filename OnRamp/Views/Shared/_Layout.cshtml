@@ -104,48 +104,14 @@
             <div class="page-content-wrapper">
                 <div class="page-content">
                     @RenderBody()
-
-                    <div id="feed-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="feed-modallabel1" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                    <h4 class="modal-title">Support</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div>
-
-                                        <span style="color: grey">
-
-                                            Walmart VOLT Support
-                                        </span>
-                                    </div>
-                                    <p>
-                                        <div>
-                                            Use the form below to email our support team directly.
-                                        </div>
-                                    </p>
-                                    <div class="form-group">
-
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea name="feedback" id="feedback" rows="6" cols="40" placeholder="Enter Feedback"></textarea>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn default" data-dismiss="modal" id="Cancel">Cancel</button>
-                                    <button type="button" id="btnSubmit" class="btn green" data-dismiss="modal" value="Send">Submit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+   
                 </div>
             </div>
         </div>
         <!-- END CONTAINER -->
         <!-- BEGIN FOOTER -->
         <div class="page-footer">
-            <div class="page-footer-inner">Walmart VOLT</div>
+            <div class="page-footer-inner">OnRamp</div>
             <div class="scroll-to-top">
                 <i class="icon-arrow-up"></i>
             </div>
@@ -182,11 +148,6 @@
         $(document).ready(function () {
             Metronic.init();
             Layout.init();
-
-            function fnSupports() {
-                $("#feed-modal").modal("show");
-            }
-
             $.ajaxSetup({ cache: false });
             $("form").submit(function () { }).change(function () { });
         });
