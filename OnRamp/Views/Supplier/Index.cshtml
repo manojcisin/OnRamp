@@ -42,6 +42,7 @@
 </table>
 <script>
     $(function () {
+        $("#liSupplier").addClass("active");
         ko.applyBindings(modelView);
         modelView.viewSuppliers();
 
@@ -92,7 +93,7 @@
                         $('#suppliertable').DataTable({
                             dom: 'Bfrtip',
                             "pageLength": 20,
-                            "lengthChange": true,                            
+                            "lengthChange": true,
                             buttons: [
                                 {
                                     extend: 'excelHtml5', exportOptions: {

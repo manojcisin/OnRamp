@@ -1,14 +1,11 @@
 ﻿using OnRamp.BusinessLayer.IRepository;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using OnRamp.Model.Models;
 
 namespace OnRamp.Controllers {
-	[Authorize]
-	public class SupplierController : Controller {
+
+	public class SupplierController : BaseController {
 
 		private readonly IRepositorySupplierBL iRepositorySupplierBL;
 
@@ -25,26 +22,48 @@ namespace OnRamp.Controllers {
 			return View();
 		}
 
+		/// <summary>
+		/// This is used to Add Supplier 
+		/// </summary>
+		/// <param name="supplier"></param>
+		/// <returns></returns>
 		public ActionResult AddSupplier(Suppliers supplier) {
 			Suppliers result = iRepositorySupplierBL.AddSupplier(supplier);
 			return RedirectToAction("Index");
 		}
-
+		/// <summary>
+		/// This is used to get Supplier data
+		/// </summary>
+		/// <returns></returns>
 		public JsonResult GetList() {
 			List<Suppliers> suppliers = iRepositorySupplierBL.GetSupplierList();
 			return Json(suppliers, JsonRequestBehavior.AllowGet);
 		}
-
+		/// <summary>
+		/// This is used to get Supplier by Id
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		public ActionResult Edit(int id) {
 			Suppliers supplier = iRepositorySupplierBL.GetSupplierById(id);
 			return View(supplier);
 		}
 
+		/// <summary>
+		/// This is used to Update the Supplier
+		/// </summary>
+		/// <param name="supplier"></param>
+		/// <returns></returns>
 		public ActionResult Update(Suppliers supplier) {
 			Suppliers result = iRepositorySupplierBL.UpdateSupplier(supplier);
 			return RedirectToAction("Index");
 		}
 
+		/// <summary>
+		/// This is used to Delete Supplier By Id
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		public JsonResult Delete(int id) {
 			bool result = iRepositorySupplierBL.RemoveSupplier(id);
 			return Json(result, JsonRequestBehavior.AllowGet);

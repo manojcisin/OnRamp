@@ -1,7 +1,5 @@
 ﻿using OnRamp.Helpers;
 using OnRamp.Model.Models;
-using System;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -16,13 +14,10 @@ namespace OnRamp.Controllers {
         }
 
 
-
 		[HttpPost]
 		[AllowAnonymous]
 		[OutputCache(NoStore = true, Duration = 0)]
 		public ActionResult Login(User model) {
-
-
 			var user = model.Email == "ashish@gmail.com" && model.Password == "ashish123" ? true : false;
 
 			if (user) {
@@ -30,8 +25,7 @@ namespace OnRamp.Controllers {
 				// Gets the cookie
 				FormsAuthentication.SetAuthCookie(model.Email, true);
 				SessionManager.Instance.CurrentUser = model;
-		//		SessionManager.Instance.AuthToken = TokenStore.GetToken(model.UserName);
-
+		
 				return RedirectToAction("index", "home");
 			}
 			//If we got this far, something failed, redisplay form
@@ -54,11 +48,7 @@ namespace OnRamp.Controllers {
 			Session.Abandon();
 			FormsAuthentication.SignOut();
 			HttpContext.User = null;
-			//HttpContext.GetOwinContext().Authentication.SignOut(
-			//    OpenIdConnectAuthenticationDefaults.AuthenticationType);
 		}
-
-
 
 
 	}

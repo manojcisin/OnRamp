@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Orders</h2>
+
+
+<table id="ordertable" class="table table-striped" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>
+                S.no
+            </th>
+            <th>
+                Order_Number
+            </th>
+            <th>
+                Customer_Name
+            </th>
+            <th>
+                Order_Date
+            </th>
+            <th>
+                Payment_Status
+            </th>
+
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: orders">
+        <tr>
+            <td data-bind="text: ($index() + 1)"></td>
+            <td data-bind="text: Order_Number"></td>
+            <td data-bind="text: Customer_Name"></td>
+            <td data-bind="text: Date_Sold"></td>
+            <td data-bind="text: Payment_Status"></td>
+
+        </tr>
+    </tbody>
+</table>
+<script>
+    $(function () {
+        $("#liOrder").addClass("active");
+        ko.applyBindings(modelView);
+        modelView.viewOrders();
+
+    });
+    var modelView = {
+        orders: ko.observableArray([]),
+        viewOrders: function () {
+            var thisObj = this;
+            try {
+                $.ajax({
+                    url: '/Order/GetList',
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    success: function (data) {
+                        thisObj.orders(data); //Here we are assigning values to KO Observable array
+                        //$("#ordertable").DataTable();
+                        $('#ordertable').DataTable({
+                            dom: 'Bfrtip',
+                            "pageLength": 20,
+                            "lengthChange": true,
+                            buttons: [
+                                {
+                                    extend: 'excelHtml5', exportOptions: {
+                                        columns: [0, 1, 2, 3]
+                                    }
+                                },
+                                {
+                                    extend: 'csvHtml5', exportOptions: {
+                                        columns: [0, 1, 2, 3]
+                                    }
+                                },
+                                {
+                                    extend: 'pdfHtml5', exportOptions: {
+                                        columns: [0, 1, 2, 3]
+                                    }
+                                }
+                            ]
+                        });
+                    },
+                    error: function (err) {
+                        alert(err.status + " : " + err.statusText);
+                    }
+                });
+            } catch (e) {
+                //window.location.href = '/Home/Read/';
+            }
+        }
+    };
+
+
+
+
+</script>
+
+

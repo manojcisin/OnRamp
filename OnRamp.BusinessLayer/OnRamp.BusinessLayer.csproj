@@ -51,6 +51,7 @@
     <Compile Include="AutoMapperHelper.cs" />
     <Compile Include="IRepository\IRepositoryCategoryBL.cs" />
     <Compile Include="IRepository\IRepositoryCustomerBL.cs" />
+    <Compile Include="IRepository\IRepositoryOrderBL.cs" />
     <Compile Include="IRepository\IRepositoryProductBL.cs" />
     <Compile Include="IRepository\IRepositorySupplierBL.cs" />
     <Compile Include="Mapper.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\RepositoryCategoryBL.cs" />
     <Compile Include="Repository\RepositoryCustomerBL.cs" />
+    <Compile Include="Repository\RepositoryOrderBL.cs" />
     <Compile Include="Repository\RepositoryProductBL.cs" />
     <Compile Include="Repository\RepositorySupplierBL.cs" />
   </ItemGroup>

@@ -207,11 +207,14 @@
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Enums\EPaymentStatus.cs" />
+    <Compile Include="Helpers\Enums\EProductStatus.cs" />
     <Compile Include="Helpers\SessionManager.cs" />
     <Compile Include="Link\RootLinks.cs" />
     <Compile Include="Models\UserModel.cs" />
@@ -775,7 +778,6 @@
     <Content Include="assets\img\voltLogo.png" />
     <Content Include="assets\img\voltsystems150.png" />
     <Content Include="assets\img\walmart-stacked.png" />
-    <Content Include="assets\img\Walmart_logo.svg.png" />
     <Content Include="assets\img\wmt-volt-long.png" />
     <Content Include="assets\img\wm_square_logo.png" />
     <Content Include="assets\img\works\img1.jpg" />
@@ -3075,6 +3077,13 @@
     <Content Include="Views\Supplier\Edit.cshtml" />
     <Content Include="Views\Supplier\Add.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Add.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Add.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Shared\UnAuthorized.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Product\AddProductView.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -3102,7 +3111,6 @@
     <Folder Include="assets\plugins\jquery-validation\test\qunit\" />
     <Folder Include="assets\plugins\jquery-validation\test\selects\" />
     <Folder Include="assets\plugins\plupload\examples\upload\" />
-    <Folder Include="Mappers\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>

@@ -85,10 +85,12 @@
     <Compile Include="IRepository.cs" />
     <Compile Include="IRepository\IRepositoryCategory.cs" />
     <Compile Include="IRepository\IRepositoryCustomer.cs" />
+    <Compile Include="IRepository\IRepositoryOrder.cs" />
     <Compile Include="IRepository\IRepositoryProduct.cs" />
     <Compile Include="IRepository\IRepositorySupplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\RepositoryCategory.cs" />
+    <Compile Include="Repository\RepositoryOrder.cs" />
     <Compile Include="Repository\RepositoryProduct.cs" />
     <Compile Include="Repository\RepositorySupplier.cs" />
     <Compile Include="Repository\RepositoryCustomer.cs" />

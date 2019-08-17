@@ -12,6 +12,7 @@ namespace OnRamp.App_Start {
 			AutoMapperHelper.CreateMapping<Tbl_Customers, Customers>();
 			AutoMapperHelper.CreateMapping<Tbl_Product_Category, Category>();
 			AutoMapperHelper.CreateMapping<Tbl_Suppliers, Suppliers>();
+			AutoMapperHelper.CreateMapping<Tbl_Orders, Orders>();
 			AutoMapperHelper.CreateMapping<Tbl_Products, Products>();
 		}
 	}

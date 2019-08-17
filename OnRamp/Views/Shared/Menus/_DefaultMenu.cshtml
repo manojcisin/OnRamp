@@ -1,45 +1,38 @@
 ﻿<li data-highlight="active" role="noitem" id="dashboard" class="checkClass">
-    <a href="/">
+    <a href="@Url.Action("Index", "Home")">
         <i class="icon-pie-chart"></i>
         <span class="title">Dashboard</span>
         <span class="selected"></span>
     </a>
 </li>
-<li data-highlight="active" id="ticket" class="checkClass">
-    <a href="#">
-        <i class="fa fa-unlink"></i>
-        <span class="title">Ticket System</span>
-        <span id="spn_ticket" class="selected"></span>
-        <span class="arrow "></span>
+
+<li role="noitem" id="liOrder" class="checkClass">
+    <a href="@Url.Action("Index", "Order")">
+        <i class="icon-pie-chart"></i>
+        <span class="title">Orders</span>
+        <span class="selected"></span>
     </a>
-    <ul class="sub-menu">
-        <li data-highlight="active" class="subClass" id="liTicketList">
-            <a href="@Url.Action("index", "ticket")">
-                <i class="icon-list"></i>
-                <span class="title">Tickets</span>
-                <span class="selected"></span>
-            </a>
-        </li>
-        <li data-highlight="active" class="subClass" id="liCreateTicket">
-            <a href="@Url.Action("EditTicket", "ticket")">
-                <i class="fa fa-plus"></i>
-                <span class="title">Create Ticket</span>
-                <span class="selected"></span>
-            </a>
-        </li>
-        <li data-highlight="active" class="subClass" id="liTicketReport">
-            <a href="@Url.Action("TicketReport", "ticket")">
-                <i class="fa fa-list"></i>
-                <span class="title">Ticket Report</span>
-                <span class="selected"></span>
-            </a>
-        </li>
-    </ul>
 </li>
+
+<li role="noitem" id="liSupplier" class="checkClass">
+    <a href="@Url.Action("Index", "Supplier")">
+        <i class="icon-pie-chart"></i>
+        <span class="title">Suppliers</span>
+        <span class="selected"></span>
+    </a>
+</li>
+
 <li role="noitem" id="liCustomer" class="checkClass">
     <a href="@Url.Action("Index", "Customer")">
         <i class="icon-pie-chart"></i>
         <span class="title">Customers</span>
+        <span class="selected"></span>
+    </a>
+</li>
+<li role="noitem" id="liCategory" class="checkClass">
+    <a href="@Url.Action("Index", "Category")">
+        <i class="icon-pie-chart"></i>
+        <span class="title">Category</span>
         <span class="selected"></span>
     </a>
 </li>

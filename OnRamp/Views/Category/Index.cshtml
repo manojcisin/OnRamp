@@ -4,52 +4,49 @@
 }
 
 
-<h2>Customer</h2>
+<h2>Category</h2>
 
 <p>
-    @Html.ActionLink("Add Customer", "Add")
+    @Html.ActionLink("Add Category", "Add")
 </p>
-<table id="customertable" class="table table-striped" cellspacing="0" width="100%">
+<table id="categorytable" class="table table-striped" cellspacing="0" width="100%">
     <thead>
         <tr>
             <th>
                 S.no
             </th>
             <th>
-                CustomerName
+                CategoryName
             </th>
             <th>
-                CustomerEmail
+                CategoryDescription
             </th>
-            <th>
-                CustomerTelephoneNumber
-            </th>
+
             <th>Actions</th>
         </tr>
     </thead>
-    <tbody data-bind="foreach: customers">
+    <tbody data-bind="foreach: categories">
         <tr>
             <td data-bind="text: ($index() + 1)"></td>
-            <td data-bind="text: Customer_Name"></td>
-            <td data-bind="text: Customer_Email"></td>
-            <td data-bind="text: Customer_Telephone_Number"></td>
+            <td data-bind="text: Category_Name"></td>
+            <td data-bind="text: Category_Description"></td>
+            
             <td>
-                <a data-bind="attr: { 'href': '@Url.Action("Edit", "Customer")/' + Customer_ID }" class="btn-link">Edit</a>
-                <a class="btnDelete" data-bind="attr: { 'id': Customer_ID }" id=Customer_ID>Delete</a>
+                <a data-bind="attr: { 'href': '@Url.Action("Edit", "Category")/' + Category_ID }" class="btn-link">Edit</a>
+                <a class="btnDelete" data-bind="attr: { 'id': Category_ID }" id=Category_ID>Delete</a>
             </td>
         </tr>
     </tbody>
 </table>
 <script>
     $(function () {
-
-        $("#liCustomer").addClass("active");
+        $("#liCategory").addClass("active");
         ko.applyBindings(modelView);
-        modelView.viewCustomers();
+        modelView.viewCategory();
 
         $(document).on("click", ".btnDelete", function (e) {
             bootbox.confirm({
-                message: "Are you sure! You want remove this customer?",
+                message: "Are you sure! You want remove this category?",
                 buttons: {
                     confirm: {
                         label: 'Yes',
@@ -62,11 +59,11 @@
                 },
                 callback: function (result) {
                     if (result) {
-                        $.get("/Customer/Delete?id=" + e.target.id, function (data) {
+                        $.get("/Category/Delete?id=" + e.target.id, function (data) {
                             if (data) {
-                                bootbox.alert("Customer deleted successfully!");
-                                $("#customertable tbody").empty();
-                                modelView.viewCustomers();
+                                bootbox.alert("Category deleted successfully!");
+                                $("#categorytable tbody").empty();
+                                modelView.viewCategory();
                             }
                         })
                     }
@@ -75,19 +72,19 @@
         });
     });
     var modelView = {
-        customers: ko.observableArray([]),
-        viewCustomers: function () {
+        categories: ko.observableArray([]),
+        viewCategory: function () {
             var thisObj = this;
             try {
                 $.ajax({
-                    url: '/Customer/GetList',
+                    url: '/Category/GetList',
                     type: 'GET',
                     dataType: 'json',
                     contentType: 'application/json',
                     success: function (data) {
-                        thisObj.customers(data); //Here we are assigning values to KO Observable array
-                        //$("#customertable").DataTable();
-                        $('#customertable').DataTable({
+                        thisObj.categories(data); //Here we are assigning values to KO Observable array
+                        //$("#categorytable").DataTable();
+                        $('#categorytable').DataTable({
                             dom: 'Bfrtip',
                             "pageLength": 20,
                             "lengthChange": true,

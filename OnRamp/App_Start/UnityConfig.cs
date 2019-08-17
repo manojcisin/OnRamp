@@ -51,6 +51,9 @@ namespace OnRamp.App_Start
 
 			container.RegisterType<IRepositoryProductBL, RepositoryProductBL>();
 			container.RegisterType<IRepositoryProduct, RepositoryProduct>();
+
+			container.RegisterType<IRepositoryOrderBL, RepositoryOrderBL>();
+			container.RegisterType<IRepositoryOrder, RepositoryOrder>();
 		}
     }
 }
