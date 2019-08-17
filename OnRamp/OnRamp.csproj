@@ -300,7 +300,6 @@
     <Content Include="assets\img\avatar3.jpg" />
     <Content Include="assets\img\avatar3_small.jpg" />
     <Content Include="assets\img\BadgeSample.PNG" />
-    <Content Include="assets\img\Badge_voltLogo.PNG" />
     <Content Include="assets\img\bg-opacity.png" />
     <Content Include="assets\img\bg-white-lock.png" />
     <Content Include="assets\img\bg-white.png" />
@@ -773,12 +772,7 @@
     <Content Include="assets\img\User.png" />
     <Content Include="assets\img\user_sm.png" />
     <Content Include="assets\img\venio-image.PNG" />
-    <Content Include="assets\img\volt-35.png" />
-    <Content Include="assets\img\volt-70.png" />
-    <Content Include="assets\img\voltLogo.png" />
-    <Content Include="assets\img\voltsystems150.png" />
     <Content Include="assets\img\walmart-stacked.png" />
-    <Content Include="assets\img\wmt-volt-long.png" />
     <Content Include="assets\img\wm_square_logo.png" />
     <Content Include="assets\img\works\img1.jpg" />
     <Content Include="assets\img\works\img2.jpg" />
@@ -791,6 +785,9 @@
     <Content Include="assets\knockoutjs\KOCreateCategory.js" />
     <Content Include="assets\knockoutjs\KOCreateCustomer.js" />
     <Content Include="assets\knockoutjs\KOCreateSupplier.js" />
+    <Content Include="assets\knockoutjs\KOListCategory.js" />
+    <Content Include="assets\knockoutjs\KOListCustomer.js" />
+    <Content Include="assets\knockoutjs\KOListSupplier.js" />
     <Content Include="assets\knockoutjs\KOUpdateCategory.js" />
     <Content Include="assets\knockoutjs\KOUpdateCustomer.js" />
     <Content Include="assets\knockoutjs\KOUpdateSupplier.js" />
