@@ -46,10 +46,11 @@ namespace OnRamp.Controllers {
         protected override void OnException(ExceptionContext filterContext)
         {
             if (filterContext == null) throw new ArgumentNullException("filterContext");
-            if (filterContext.ExceptionHandled || !filterContext.HttpContext.IsCustomErrorEnabled)
-                return;
-            filterContext.ExceptionHandled = true;
-            filterContext.Result = new ViewResult { ViewName = "Error" };
+			if (filterContext.ExceptionHandled || !filterContext.HttpContext.IsCustomErrorEnabled) 
+				return;
+
+				filterContext.ExceptionHandled = true;
+				filterContext.Result = new ViewResult { ViewName = "Error" };
+			}
         }
     }
-}

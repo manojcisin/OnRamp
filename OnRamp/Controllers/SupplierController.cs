@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 using OnRamp.Model.Models;
+using System.Web.Script.Serialization;
 
 namespace OnRamp.Controllers {
 
@@ -29,7 +30,7 @@ namespace OnRamp.Controllers {
 		/// <returns></returns>
 		public ActionResult AddSupplier(Suppliers supplier) {
 			Suppliers result = iRepositorySupplierBL.AddSupplier(supplier);
-			return RedirectToAction("Index");
+			return Json(result, JsonRequestBehavior.AllowGet);
 		}
 		/// <summary>
 		/// This is used to get Supplier data
@@ -46,7 +47,9 @@ namespace OnRamp.Controllers {
 		/// <returns></returns>
 		public ActionResult Edit(int id) {
 			Suppliers supplier = iRepositorySupplierBL.GetSupplierById(id);
-			return View(supplier);
+			var serializer = new JavaScriptSerializer();
+			ViewBag.supplier = serializer.Serialize(supplier);
+			return View();
 		}
 
 		/// <summary>
@@ -56,7 +59,8 @@ namespace OnRamp.Controllers {
 		/// <returns></returns>
 		public ActionResult Update(Suppliers supplier) {
 			Suppliers result = iRepositorySupplierBL.UpdateSupplier(supplier);
-			return RedirectToAction("Index");
+			return Json(result, JsonRequestBehavior.AllowGet);
+
 		}
 
 		/// <summary>

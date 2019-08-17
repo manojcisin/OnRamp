@@ -2,6 +2,7 @@
 using OnRamp.Model.Models;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace OnRamp.Controllers {
 	public class CustomerController : BaseController {
@@ -22,7 +23,7 @@ namespace OnRamp.Controllers {
 
 		public ActionResult AddCustomer(Customers customers) {
 			Customers result = iRepositoryCustomerBL.AddCustomer(customers);
-			return RedirectToAction("Index");
+			return Json(result, JsonRequestBehavior.AllowGet);
 		}
 
 		public JsonResult GetList() {
@@ -32,12 +33,14 @@ namespace OnRamp.Controllers {
 
 		public ActionResult Edit(int id) {
 			Customers customer = iRepositoryCustomerBL.GetCustomerById(id);
-			return View(customer);
+			var serializer = new JavaScriptSerializer();
+			ViewBag.customer = serializer.Serialize(customer);
+			return View();
 		}
 
 		public ActionResult Update(Customers customer) {
 			Customers result = iRepositoryCustomerBL.UpdateCustomer(customer);
-			return RedirectToAction("Index");
+			return Json(result, JsonRequestBehavior.AllowGet);
 		}
 
 		public JsonResult Delete(int id) {

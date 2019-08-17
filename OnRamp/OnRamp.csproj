@@ -788,6 +788,12 @@
     <Content Include="assets\img\works\img6.jpg" />
     <Content Include="assets\jquery.multi-select.js" />
     <Content Include="assets\jquery.validationEngine\jquery.validationEngine.js" />
+    <Content Include="assets\knockoutjs\KOCreateCategory.js" />
+    <Content Include="assets\knockoutjs\KOCreateCustomer.js" />
+    <Content Include="assets\knockoutjs\KOCreateSupplier.js" />
+    <Content Include="assets\knockoutjs\KOUpdateCategory.js" />
+    <Content Include="assets\knockoutjs\KOUpdateCustomer.js" />
+    <Content Include="assets\knockoutjs\KOUpdateSupplier.js" />
     <Content Include="assets\layouts\global\scripts\cookie-consent.js" />
     <Content Include="assets\layouts\global\scripts\cookie-consent.min.js" />
     <Content Include="assets\layouts\global\scripts\hor-timeline.js" />
