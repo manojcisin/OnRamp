@@ -21,20 +21,7 @@ namespace OnRamp.BusinessLayer.Repository {
 
 		public List<Orders> GetOrderList() {
 			var result = iRepositoryOrder.GetOrderList();
-
-			var orders = new List<Orders>();
-			orders = (from p in result
-					  select new Orders {
-						  Order_Number = p.Order_Number,
-						  Customer_Name = p.Tbl_Customers.Customer_Name,
-						  Date_Sold = p.Date_Sold,
-						  Payment_Received = p.Payment_Received
-
-					  }).ToList();
-
-
-			return orders.ToList();
-
+			return result;
 		}
 
 		public int GetOrderForMonth() {

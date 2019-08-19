@@ -30,7 +30,7 @@ namespace OnRamp.DataLayer.Repository {
 			return result;
 		}
 		public List<ProductDetail> GetProductListForDashBoard() {
-			List<ProductDetail> productDetail = Context.Tbl_Products.AsEnumerable().OrderByDescending(x=>x.Product_Name)
+			List<ProductDetail> productDetail = Context.Tbl_Products.AsEnumerable()
 				.Select(x => new ProductDetail {
 					Product_Barcode = x.Product_Barcode,
 					Product_Category = x.Tbl_Product_Category.Category_Name,
@@ -40,7 +40,7 @@ namespace OnRamp.DataLayer.Repository {
 					Product_Status = ((ProductStatus)x.Product_Status).ToString(),
 					Product_Warranty = x.Product_Warranty,
 					Supplier_Name  = x.Tbl_Suppliers.Supplier_Name
-				}).ToList();
+				}).OrderBy(x => x.Product_Name).ToList();
 			return productDetail;
 		}
 

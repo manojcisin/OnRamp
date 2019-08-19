@@ -18,6 +18,7 @@ namespace OnRamp.DataLayer.Context
         public Tbl_Suppliers()
         {
             this.Tbl_Products = new HashSet<Tbl_Products>();
+            this.Tbl_Orders = new HashSet<Tbl_Orders>();
         }
     
         public int Supplier_ID { get; set; }
@@ -27,5 +28,7 @@ namespace OnRamp.DataLayer.Context
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbl_Products> Tbl_Products { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tbl_Orders> Tbl_Orders { get; set; }
     }
 }

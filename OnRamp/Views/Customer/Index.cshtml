@@ -34,8 +34,8 @@
             <td data-bind="text: Customer_Email"></td>
             <td data-bind="text: Customer_Telephone_Number"></td>
             <td>
-                <a data-bind="attr: { 'href': '@Url.Action("Edit", "Customer")/' + Customer_ID }" class="btn-link">Edit</a>
-                <a class="btnDelete" data-bind="attr: { 'id': Customer_ID }" id=Customer_ID>Delete</a>
+                <a data-bind="attr: { 'href': '@Url.Action("Edit", "Customer")/' + Customer_ID }" class="btn-link"><i class="fa fa-pencil"></i></a>
+                <a class="btnDelete" data-bind="attr: { 'id': Customer_ID }" id=Customer_ID><i class="fa fa-trash-o"></i></a>
             </td>
         </tr>
     </tbody>

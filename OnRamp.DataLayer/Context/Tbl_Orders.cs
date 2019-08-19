@@ -15,11 +15,14 @@ namespace OnRamp.DataLayer.Context
     public partial class Tbl_Orders
     {
         public int Order_ID { get; set; }
-        public string Order_Number { get; set; }
         public int Customer_ID { get; set; }
+        public int Product_Barcode { get; set; }
+        public int Supplier_ID { get; set; }
         public System.DateTime Date_Sold { get; set; }
         public bool Payment_Received { get; set; }
     
         public virtual Tbl_Customers Tbl_Customers { get; set; }
+        public virtual Tbl_Products Tbl_Products { get; set; }
+        public virtual Tbl_Suppliers Tbl_Suppliers { get; set; }
     }
 }

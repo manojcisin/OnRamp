@@ -27,8 +27,8 @@ namespace OnRamp.DataLayer.Context
     
         public virtual DbSet<Tbl_Customers> Tbl_Customers { get; set; }
         public virtual DbSet<Tbl_Suppliers> Tbl_Suppliers { get; set; }
-        public virtual DbSet<Tbl_Orders> Tbl_Orders { get; set; }
         public virtual DbSet<Tbl_Product_Category> Tbl_Product_Category { get; set; }
         public virtual DbSet<Tbl_Products> Tbl_Products { get; set; }
+        public virtual DbSet<Tbl_Orders> Tbl_Orders { get; set; }
     }
 }

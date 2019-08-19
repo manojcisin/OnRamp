@@ -14,6 +14,12 @@ namespace OnRamp.DataLayer.Context
     
     public partial class Tbl_Products
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tbl_Products()
+        {
+            this.Tbl_Orders = new HashSet<Tbl_Orders>();
+        }
+    
         public int Product_Barcode { get; set; }
         public int Product_Category_ID { get; set; }
         public string Product_Name { get; set; }
@@ -25,5 +31,7 @@ namespace OnRamp.DataLayer.Context
     
         public virtual Tbl_Product_Category Tbl_Product_Category { get; set; }
         public virtual Tbl_Suppliers Tbl_Suppliers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tbl_Orders> Tbl_Orders { get; set; }
     }
 }

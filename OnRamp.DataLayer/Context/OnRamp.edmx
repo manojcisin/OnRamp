@@ -19,8 +19,9 @@
             <PropertyRef Name="Order_ID" />
           </Key>
           <Property Name="Order_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Order_Number" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Customer_ID" Type="int" Nullable="false" />
+          <Property Name="Product_Barcode" Type="int" Nullable="false" />
+          <Property Name="Supplier_ID" Type="int" Nullable="false" />
           <Property Name="Date_Sold" Type="datetime" Nullable="false" />
           <Property Name="Payment_Received" Type="bit" Nullable="false" />
         </EntityType>
@@ -66,6 +67,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Tbl_Orders_Tbl_Product">
+          <End Role="Tbl_Products" Type="Self.Tbl_Products" Multiplicity="1" />
+          <End Role="Tbl_Orders" Type="Self.Tbl_Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Products">
+              <PropertyRef Name="Product_Barcode" />
+            </Principal>
+            <Dependent Role="Tbl_Orders">
+              <PropertyRef Name="Product_Barcode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Orders_Tbl_Suppliers">
+          <End Role="Tbl_Suppliers" Type="Self.Tbl_Suppliers" Multiplicity="1" />
+          <End Role="Tbl_Orders" Type="Self.Tbl_Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Suppliers">
+              <PropertyRef Name="Supplier_ID" />
+            </Principal>
+            <Dependent Role="Tbl_Orders">
+              <PropertyRef Name="Supplier_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Tbl_Products_Tbl_Product_Category">
           <End Role="Tbl_Product_Category" Type="Self.Tbl_Product_Category" Multiplicity="1" />
           <End Role="Tbl_Products" Type="Self.Tbl_Products" Multiplicity="*" />
@@ -100,6 +125,14 @@
             <End Role="Tbl_Customers" EntitySet="Tbl_Customers" />
             <End Role="Tbl_Orders" EntitySet="Tbl_Orders" />
           </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Orders_Tbl_Product" Association="Self.FK_Tbl_Orders_Tbl_Product">
+            <End Role="Tbl_Products" EntitySet="Tbl_Products" />
+            <End Role="Tbl_Orders" EntitySet="Tbl_Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Orders_Tbl_Suppliers" Association="Self.FK_Tbl_Orders_Tbl_Suppliers">
+            <End Role="Tbl_Suppliers" EntitySet="Tbl_Suppliers" />
+            <End Role="Tbl_Orders" EntitySet="Tbl_Orders" />
+          </AssociationSet>
           <AssociationSet Name="FK_Tbl_Products_Tbl_Product_Category" Association="Self.FK_Tbl_Products_Tbl_Product_Category">
             <End Role="Tbl_Product_Category" EntitySet="Tbl_Product_Category" />
             <End Role="Tbl_Products" EntitySet="Tbl_Products" />
@@ -126,13 +159,8 @@
         <EntityContainer Name="onrampEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tbl_Customers" EntityType="Self.Tbl_Customers" />
           <EntitySet Name="Tbl_Suppliers" EntityType="onrampModel.Tbl_Suppliers" />
-          <EntitySet Name="Tbl_Orders" EntityType="onrampModel.Tbl_Orders" />
           <EntitySet Name="Tbl_Product_Category" EntityType="onrampModel.Tbl_Product_Category" />
           <EntitySet Name="Tbl_Products" EntityType="onrampModel.Tbl_Products" />
-          <AssociationSet Name="FK_Tbl_Orders_Tbl_Customers" Association="onrampModel.FK_Tbl_Orders_Tbl_Customers">
-            <End Role="Tbl_Customers" EntitySet="Tbl_Customers" />
-            <End Role="Tbl_Orders" EntitySet="Tbl_Orders" />
-          </AssociationSet>
           <AssociationSet Name="FK_Tbl_Products_Tbl_Product_Category" Association="onrampModel.FK_Tbl_Products_Tbl_Product_Category">
             <End Role="Tbl_Product_Category" EntitySet="Tbl_Product_Category" />
             <End Role="Tbl_Products" EntitySet="Tbl_Products" />
@@ -140,6 +168,19 @@
           <AssociationSet Name="FK_Tbl_Products_Tbl_Suppliers" Association="onrampModel.FK_Tbl_Products_Tbl_Suppliers">
             <End Role="Tbl_Suppliers" EntitySet="Tbl_Suppliers" />
             <End Role="Tbl_Products" EntitySet="Tbl_Products" />
+          </AssociationSet>
+          <EntitySet Name="Tbl_Orders" EntityType="onrampModel.Tbl_Orders" />
+          <AssociationSet Name="FK_Tbl_Orders_Tbl_Customers" Association="onrampModel.FK_Tbl_Orders_Tbl_Customers">
+            <End Role="Tbl_Customers" EntitySet="Tbl_Customers" />
+            <End Role="Tbl_Orders" EntitySet="Tbl_Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Orders_Tbl_Product" Association="onrampModel.FK_Tbl_Orders_Tbl_Product">
+            <End Role="Tbl_Products" EntitySet="Tbl_Products" />
+            <End Role="Tbl_Orders" EntitySet="Tbl_Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Orders_Tbl_Suppliers" Association="onrampModel.FK_Tbl_Orders_Tbl_Suppliers">
+            <End Role="Tbl_Suppliers" EntitySet="Tbl_Suppliers" />
+            <End Role="Tbl_Orders" EntitySet="Tbl_Orders" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Tbl_Suppliers">
@@ -151,17 +192,7 @@
           <Property Name="Supplier_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Supplier_Telephone_Number" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Tbl_Products" Relationship="onrampModel.FK_Tbl_Products_Tbl_Suppliers" FromRole="Tbl_Suppliers" ToRole="Tbl_Products" />
-        </EntityType>
-        <EntityType Name="Tbl_Orders">
-          <Key>
-            <PropertyRef Name="Order_ID" />
-          </Key>
-          <Property Name="Order_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Order_Number" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Customer_ID" Type="Int32" Nullable="false" />
-          <Property Name="Date_Sold" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Payment_Received" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Tbl_Customers" Relationship="onrampModel.FK_Tbl_Orders_Tbl_Customers" FromRole="Tbl_Orders" ToRole="Tbl_Customers" />
+          <NavigationProperty Name="Tbl_Orders" Relationship="onrampModel.FK_Tbl_Orders_Tbl_Suppliers" FromRole="Tbl_Suppliers" ToRole="Tbl_Orders" />
         </EntityType>
         <EntityType Name="Tbl_Product_Category">
           <Key>
@@ -186,19 +217,8 @@
           <Property Name="Product_Status" Type="Int32" />
           <NavigationProperty Name="Tbl_Product_Category" Relationship="onrampModel.FK_Tbl_Products_Tbl_Product_Category" FromRole="Tbl_Products" ToRole="Tbl_Product_Category" />
           <NavigationProperty Name="Tbl_Suppliers" Relationship="onrampModel.FK_Tbl_Products_Tbl_Suppliers" FromRole="Tbl_Products" ToRole="Tbl_Suppliers" />
+          <NavigationProperty Name="Tbl_Orders" Relationship="onrampModel.FK_Tbl_Orders_Tbl_Product" FromRole="Tbl_Products" ToRole="Tbl_Orders" />
         </EntityType>
-        <Association Name="FK_Tbl_Orders_Tbl_Customers">
-          <End Type="onrampModel.Tbl_Customers" Role="Tbl_Customers" Multiplicity="1" />
-          <End Type="onrampModel.Tbl_Orders" Role="Tbl_Orders" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tbl_Customers">
-              <PropertyRef Name="Customer_ID" />
-            </Principal>
-            <Dependent Role="Tbl_Orders">
-              <PropertyRef Name="Customer_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Tbl_Products_Tbl_Product_Category">
           <End Type="onrampModel.Tbl_Product_Category" Role="Tbl_Product_Category" Multiplicity="1" />
           <End Type="onrampModel.Tbl_Products" Role="Tbl_Products" Multiplicity="*" />
@@ -219,6 +239,56 @@
               <PropertyRef Name="Supplier_ID" />
             </Principal>
             <Dependent Role="Tbl_Products">
+              <PropertyRef Name="Supplier_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Tbl_Orders">
+          <Key>
+            <PropertyRef Name="Order_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+          <Property Name="Product_Barcode" Type="Int32" Nullable="false" />
+          <Property Name="Supplier_ID" Type="Int32" Nullable="false" />
+          <Property Name="Date_Sold" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Payment_Received" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Tbl_Customers" Relationship="onrampModel.FK_Tbl_Orders_Tbl_Customers" FromRole="Tbl_Orders" ToRole="Tbl_Customers" />
+          <NavigationProperty Name="Tbl_Products" Relationship="onrampModel.FK_Tbl_Orders_Tbl_Product" FromRole="Tbl_Orders" ToRole="Tbl_Products" />
+          <NavigationProperty Name="Tbl_Suppliers" Relationship="onrampModel.FK_Tbl_Orders_Tbl_Suppliers" FromRole="Tbl_Orders" ToRole="Tbl_Suppliers" />
+        </EntityType>
+        <Association Name="FK_Tbl_Orders_Tbl_Customers">
+          <End Type="onrampModel.Tbl_Customers" Role="Tbl_Customers" Multiplicity="1" />
+          <End Type="onrampModel.Tbl_Orders" Role="Tbl_Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Customers">
+              <PropertyRef Name="Customer_ID" />
+            </Principal>
+            <Dependent Role="Tbl_Orders">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Orders_Tbl_Product">
+          <End Type="onrampModel.Tbl_Products" Role="Tbl_Products" Multiplicity="1" />
+          <End Type="onrampModel.Tbl_Orders" Role="Tbl_Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Products">
+              <PropertyRef Name="Product_Barcode" />
+            </Principal>
+            <Dependent Role="Tbl_Orders">
+              <PropertyRef Name="Product_Barcode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Orders_Tbl_Suppliers">
+          <End Type="onrampModel.Tbl_Suppliers" Role="Tbl_Suppliers" Multiplicity="1" />
+          <End Type="onrampModel.Tbl_Orders" Role="Tbl_Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Suppliers">
+              <PropertyRef Name="Supplier_ID" />
+            </Principal>
+            <Dependent Role="Tbl_Orders">
               <PropertyRef Name="Supplier_ID" />
             </Dependent>
           </ReferentialConstraint>
@@ -249,17 +319,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tbl_Orders">
-            <EntityTypeMapping TypeName="onrampModel.Tbl_Orders">
-              <MappingFragment StoreEntitySet="Tbl_Orders">
-                <ScalarProperty Name="Payment_Received" ColumnName="Payment_Received" />
-                <ScalarProperty Name="Date_Sold" ColumnName="Date_Sold" />
-                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
-                <ScalarProperty Name="Order_Number" ColumnName="Order_Number" />
-                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Tbl_Product_Category">
             <EntityTypeMapping TypeName="onrampModel.Tbl_Product_Category">
               <MappingFragment StoreEntitySet="Tbl_Product_Category">
@@ -280,6 +339,18 @@
                 <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
                 <ScalarProperty Name="Product_Category_ID" ColumnName="Product_Category_ID" />
                 <ScalarProperty Name="Product_Barcode" ColumnName="Product_Barcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Orders">
+            <EntityTypeMapping TypeName="onrampModel.Tbl_Orders">
+              <MappingFragment StoreEntitySet="Tbl_Orders">
+                <ScalarProperty Name="Payment_Received" ColumnName="Payment_Received" />
+                <ScalarProperty Name="Date_Sold" ColumnName="Date_Sold" />
+                <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+                <ScalarProperty Name="Product_Barcode" ColumnName="Product_Barcode" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

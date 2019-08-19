@@ -32,8 +32,8 @@
             <td data-bind="text: Category_Description"></td>
             
             <td>
-                <a data-bind="attr: { 'href': '@Url.Action("Edit", "Category")/' + Category_ID }" class="btn-link">Edit</a>
-                <a class="btnDelete" data-bind="attr: { 'id': Category_ID }" id=Category_ID>Delete</a>
+                <a data-bind="attr: { 'href': '@Url.Action("Edit", "Category")/' + Category_ID }" class="btn-link"><i class="fa fa-pencil"></i></a>
+                <a class="btnDelete" data-bind="attr: { 'id': Category_ID }" id=Category_ID><i class="fa fa-trash-o"></i></a>
             </td>
         </tr>
     </tbody>

@@ -37,10 +37,5 @@ namespace OnRamp.Model.Models {
 		Returned = 2,
 		Defective = 3
 	}
-
-	public enum PaymentStatus {
-		Received = 0,
-		NotReceived = 1
-	}
 		
 }
