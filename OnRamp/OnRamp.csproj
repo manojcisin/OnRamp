@@ -368,6 +368,7 @@
     <Content Include="assets\knockoutjs\KOCreateSupplier.js" />
     <Content Include="assets\knockoutjs\KOListCategory.js" />
     <Content Include="assets\knockoutjs\KOListCustomer.js" />
+    <Content Include="assets\knockoutjs\KOListOrder.js" />
     <Content Include="assets\knockoutjs\KOListSupplier.js" />
     <Content Include="assets\knockoutjs\KOUpdateCategory.js" />
     <Content Include="assets\knockoutjs\KOUpdateCustomer.js" />
