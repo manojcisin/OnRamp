@@ -32,6 +32,5 @@ namespace OnRamp.Controllers {
 			return Json(result, JsonRequestBehavior.AllowGet);
 		}
 
-
 	}
 }

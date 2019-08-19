@@ -23,19 +23,43 @@
                 Order_Date
             </th>
             <th>
+                Product_Name
+            </th>
+            <th>
+                Supplier_Name
+            </th>
+            <th>
                 Payment_Status
             </th>
-
+            <th>
+                Product_Status
+            </th>
         </tr>
     </thead>
     <tbody data-bind="foreach: orders">
         <tr>
             <td data-bind="text: ($index() + 1)"></td>
-            <td data-bind="text: Order_Number"></td>
+            <td data-bind="text: Order_ID"></td>
             <td data-bind="text: Customer_Name"></td>
             <td data-bind="text: Date_Sold"></td>
-            <td data-bind="text: Payment_Status"></td>
-
+            <td data-bind="text: Product_Name"></td>
+            <td data-bind="text: Supplier_Name"></td>
+            <td>
+                <select data-bind="options: $root.paymentStatus,
+                        value: Payment_Received,
+                        optionsText: 'name',
+                        optionsValue:'id',
+                        event:{ change: 'updatePaymentStatus' }
+                       "></select>
+            </td>
+            @*<td data-bind="text: Product_Status"></td>*@
+            <td>
+                <select data-bind="options: $root.productStatus,
+                        value: Product_Status,
+                        optionsText: 'name',
+                        optionsValue:'id',
+                       "></select>
+            </td>
         </tr>
     </tbody>
 </table>
@@ -43,8 +67,8 @@
     $(function () {
         $("#liOrder").addClass("active");
         ko.applyBindings(modelView);
-        modelView.viewOrders();
-
+       // modelView.getProductStatusList();
+        modelView.viewOrders();        
     });
     var modelView = {
         orders: ko.observableArray([]),
@@ -89,6 +113,14 @@
             } catch (e) {
                 //window.location.href = '/Home/Read/';
             }
+        },
+        paymentStatus: [
+            { name: 'Received', id: true},
+            { name: 'Not Received', id: false },
+        ],
+        productStatus: [{ name: "Sold", id: 1 }, { name: "Returned", id: 2 }, { name: "Defective", id: 3 }],
+        updatePaymentStatus: function (event) {
+            alert('call');
         }
     };
 
@@ -96,5 +128,3 @@
 
 
 </script>
-
-

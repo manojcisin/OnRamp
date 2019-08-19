@@ -10,11 +10,11 @@ namespace OnRamp.Model.Models {
 		public int Product_Barcode { get; set; }
 		public string Product_Name { get; set; }
 		public int Supplier_ID { get; set; }
-		public string Supplier_Name { get; set; }
+		public string Supplier_Name { get; set; }		
+		public int Product_Status { get; set;}
 		public string Payment_Status
 		{
 			get { return Payment_Received ? "Received" : "Not Received"; }
 		}
-
 	}
 }

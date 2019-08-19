@@ -23,7 +23,8 @@ namespace OnRamp.DataLayer.Repository {
 				Product_Barcode = x.Tbl_Products.Product_Barcode,
 				Product_Name = x.Tbl_Products.Product_Name,
 				Supplier_ID = x.Supplier_ID,
-				Supplier_Name = x.Tbl_Suppliers.Supplier_Name
+				Supplier_Name = x.Tbl_Suppliers.Supplier_Name,
+				Product_Status = (int) x.Tbl_Products.Product_Status
 			}).OrderByDescending(x => x.Order_ID).ToList();
 			return orderList;
 		}

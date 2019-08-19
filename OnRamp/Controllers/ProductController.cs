@@ -53,5 +53,9 @@ namespace OnRamp.Controllers {
 			return Json(result, JsonRequestBehavior.AllowGet);
 		}
 
+		public JsonResult GetProductStatus() {
+			var result = ((ProductStatus[])Enum.GetValues(typeof(ProductStatus))).Select(x=> new { name = x.ToString() , id = (int)x}).ToList();
+			return Json(result, JsonRequestBehavior.AllowGet);
+		}
 	}
 }
