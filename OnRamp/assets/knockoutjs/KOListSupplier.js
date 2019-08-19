@@ -73,7 +73,9 @@ var modelView = {
                     alert(err.status + " : " + err.statusText);
                 }
             });
-        } catch (e) {
+        }
+        catch (e) {
+            // window.location.href = '/Home/Read/';
         }
     },
     removeSupplier: function (e) {

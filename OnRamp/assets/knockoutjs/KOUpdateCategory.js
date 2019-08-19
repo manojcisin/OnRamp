@@ -2,30 +2,65 @@
 
 var parsedSelectedCategory = $.parseJSON(selectedCategory);
 $(function () {
-    ko.applyBindings(modelUpdate);
-});
-var modelUpdate = {
-    Category_ID: ko.observable(parsedSelectedCategory.Category_ID),
-    Category_Name: ko.observable(parsedSelectedCategory.Category_Name),
-    Category_Description: ko.observable(parsedSelectedCategory.Category_Description),
+    ko.validation.init({
+        errorElementClass: "wrong-field",
+        decorateElement: true,
+        errorClass: 'wrong-field'
 
-    updateCategory: function () {
-        try {
-            $.ajax({
-                url: '/Category/Update',
-                type: 'post',
-                dataType: 'json',
-                data: ko.toJSON(this), //Here the data wil be converted to JSON
-                contentType: 'application/json',
-                success: successCallback,
-                error: errorCallback
+    }, true);
+    var modelUpdate = function () {
+
+        var self = this;
+        self.validateNow = ko.observable(false);
+        self.Category_ID = ko.observable(parsedSelectedCategory.Category_ID),
+            self.Category_Name = ko.observable(parsedSelectedCategory.Category_Name).extend({
+                required: {
+                    message: "category name is required",
+                    onlyIf: function () {
+                        return self.validateNow();
+                    }
+                }
             });
-        }
-        catch (e) {
-            window.location.href = '/Category/Index/';
-        }
-    }
-};
+        self.Category_Description = ko.observable(parsedSelectedCategory.Category_Description).extend({
+            required: {
+                message: "category description is required",
+                onlyIf: function () {
+                    return self.validateNow();
+                }
+            }
+        });
+
+        self.updateCategory = function () {
+            self.validateNow(true);
+            if (self.errors().length === 0) {
+                try {
+                    $.ajax({
+                        url: '/Category/Update',
+                        type: 'post',
+                        dataType: 'json',
+                        data: ko.toJSON(this), //Here the data wil be converted to JSON
+                        contentType: 'application/json',
+                        success: successCallback,
+                        error: errorCallback
+                    });
+                }
+                catch (e) {
+                    window.location.href = '/Category/Index/';
+                }
+            }
+            else {
+                self.errors.showAllMessages();
+            }
+
+
+        };
+        self.errors = ko.validation.group(self);
+    };
+    var viewModel = new modelUpdate();
+    ko.applyBindings(viewModel);
+});
+
+
 function successCallback(data) {
     bootbox.alert("Category Updated successfully!");
     window.location.href = '/Category/Index/';

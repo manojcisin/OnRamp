@@ -3,24 +3,37 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <style type="text/css">
+        input.wrong-field {
+            border: 1px solid red;
+        }
+
+        span.wrong-field {
+            color: #FF0000;
+        }
+    </style>
+</head>
 <h2>Edit</h2>
 @using (Html.BeginForm()) {
     @*@Html.AntiForgeryToken()*@
 <div class="form-horizontal">
     <div class="form-group hidden">
-        <label class="control-label col-md-2" for="Category_ID">Category_ID</label>
+        <label class="control-label col-md-2" for="Category_ID">Category ID</label>
         <div class="col-md-10">
             <input class="form-control text-box single-line" id="Category_ID" name="Category_ID" type="hidden" value="" data-bind="value: Category_ID">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-2" for="Category_Name">Category_Name</label>
+        <label class="control-label col-md-2" for="Category_Name">Category Name</label>
+        <span class="required"></span>
         <div class="col-md-10">
             <input class="form-control text-box single-line" id="Category_Name" name="Category_Name" type="text" value="" data-bind="value: Category_Name">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-2" for="Category_Description">Category_Description</label>
+        <label class="control-label col-md-2" for="Category_Description">Category Description</label>
+        <span class="required"></span>
         <div class="col-md-10">
             <input class="form-control text-box single-line" id="Category_Description" name="Category_Description" type="text" value="" data-bind="value: Category_Description">
         </div>

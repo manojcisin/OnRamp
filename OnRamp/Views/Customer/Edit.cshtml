@@ -3,7 +3,17 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <style type="text/css">
+        input.wrong-field {
+            border: 1px solid red;
+        }
 
+        span.wrong-field {
+            color: #FF0000;
+        }
+    </style>
+</head>
 <h2>Edit</h2>
 
 @using (Html.BeginForm()) {
@@ -12,25 +22,27 @@
     <h4>Customer</h4>
 
     <div class="form-group hidden">
-        <label class="control-label col-md-2" for="Customer_ID">Customer_ID</label>
+        <label class="control-label col-md-2" for="Customer_ID">Customer ID</label>
         <div class="col-md-10">
             <input class="form-control text-box single-line" id="Customer_ID" name="Customer_ID" type="hidden" value="" data-bind="value: Customer_ID">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-2" for="Customer_Name">Customer_Name</label>
+        <label class="control-label col-md-2" for="Customer_Name">Customer Name</label>
+        <span class="required">*</span>
         <div class="col-md-10">
-            <input class="form-control text-box single-line" id="Customer_Name" name="Customer_Name" type="text" value="" data-bind="value: Customer_Name">
+            <input class="form-control text-box single-line" id="Customer_Name" name="Customer_Name" type="text" value="" data-bind="value: Customer_Name,validationElement: Customer_Name">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-2" for="Customer_Email">Customer_Email</label>
+        <label class="control-label col-md-2" for="Customer_Email">Customer Email</label>
+        <span class="required">*</span>
         <div class="col-md-10">
-            <input class="form-control text-box single-line" id="Customer_Email" name="Customer_Email" type="text" value="" data-bind="value: Customer_Email">
+            <input class="form-control text-box single-line" id="Customer_Email" name="Customer_Email" type="text" value="" data-bind="value: Customer_Email,validationElement: Customer_Email">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-2" for="Customer_Telephone_Number">Customer_Telephone_Number</label>
+        <label class="control-label col-md-2" for="Customer_Telephone_Number">Customer Telephone_Number</label>
         <div class="col-md-10">
             <input class="form-control text-box single-line" id="Customer_Telephone_Number" name="Customer_Telephone_Number" type="text" value="" data-bind="value: Customer_Telephone_Number">
         </div>
