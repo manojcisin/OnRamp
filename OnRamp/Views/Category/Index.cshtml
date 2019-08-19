@@ -3,40 +3,49 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<h2>Category</h2>
-
 <p>
     @Html.ActionLink("Add Category", "Add")
 </p>
-<table id="categorytable" class="table table-striped" cellspacing="0" width="100%">
-    <thead>
-        <tr>
-            <th>
-                S.no
-            </th>
-            <th>
-                Category Name
-            </th>
-            <th>
-                Category Description
-            </th>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    Categories
+                </div>
+            </div>
+            <div class="portlet-body">
+                <table id="categorytable" class="table table-striped" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                S.no
+                            </th>
+                            <th>
+                                Category Name
+                            </th>
+                            <th>
+                                Category Description
+                            </th>
 
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody data-bind="foreach: categories">
-        <tr>
-            <td data-bind="text: ($index() + 1)"></td>
-            <td data-bind="text: Category_Name"></td>
-            <td data-bind="text: Category_Description"></td>
-            
-            <td>
-                <a data-bind="attr: { 'href': '@Url.Action("Edit", "Category")/' + Category_ID }" class="btn-link"><i class="fa fa-pencil"></i></a>
-                <a class="btnDelete" data-bind="attr: { 'id': Category_ID }" id=Category_ID><i class="fa fa-trash-o"></i></a>
-            </td>
-        </tr>
-    </tbody>
-</table>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: categories">
+                        <tr>
+                            <td data-bind="text: ($index() + 1)"></td>
+                            <td data-bind="text: Category_Name"></td>
+                            <td data-bind="text: Category_Description"></td>
 
+                            <td>
+                                <a data-bind="attr: { 'href': '@Url.Action("Edit", "Category")/' + Category_ID }" class="btn-link"><i class="fa fa-pencil"></i></a>
+                                <a class="btnDelete" data-bind="attr: { 'id': Category_ID }" id=Category_ID><i class="fa fa-trash-o"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="~/assets/knockoutjs/KOListCategory.js"></script>

@@ -1514,3 +1514,7 @@ Pricing table(Alternative 2)
 .pagination {
     float: right;
 }
+
+.page-header.navbar {
+    background-color: #3598dc;
+}
