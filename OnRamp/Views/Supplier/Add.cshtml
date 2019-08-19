@@ -5,31 +5,43 @@
     ViewBag.Title = "Add";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <style type="text/css">
+        input.wrong-field {
+            border: 1px solid red;
+        }
+
+        span.wrong-field {
+            color: #FF0000;
+        }
+    </style>
+</head>
 <div class="form-horizontal">
     <h2>Add</h2>
     <hr>
     <div class="form-group hidden">
-        <label class="control-label col-md-2" for="Supplier_ID">Supplier_ID</label>
+        <label class="control-label col-md-2" for="Supplier_ID">Supplier ID</label>
         <div class="col-md-10">
             <input class="form-control text-box single-line" id="Supplier_ID" name="Supplier_ID" type="hidden" value="" data-bind="value: Supplier_ID">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-2" for="Supplier_Name">Supplier_Name</label>
+        <label class="control-label col-md-2" for="Supplier_Name">Supplier Name<span class="required">*</span></label>
+        
         <div class="col-md-10">
-            <input class="form-control text-box single-line" id="Supplier_Name" name="Supplier_Name" type="text" value="" data-bind="value: Supplier_Name">
+            <input class="form-control text-box single-line" id="Supplier_Name" name="Supplier_Name" type="text" value="" data-bind="value: Supplier_Name,validationElement: Supplier_Name">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-2" for="Supplier_Email">Supplier_Email</label>
+        <label class="control-label col-md-2" for="Supplier_Email">Supplier Email<span class="required">*</span></label>
         <div class="col-md-10">
-            <input class="form-control text-box single-line" id="Supplier_Email" name="Supplier_Email" type="text" value="" data-bind="value: Supplier_Email">
+            <input class="form-control text-box single-line" id="Supplier_Email" name="Supplier_Email" type="text" value="" data-bind="value: Supplier_Email,validationElement: Supplier_Email">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-md-2" for="Supplier_Telephone_Number">Supplier_Telephone_Number</label>
+        <label class="control-label col-md-2" for="Supplier_Telephone_Number">Supplier Telephone_Number<span class="required">*</span></label>
         <div class="col-md-10">
-            <input class="form-control text-box single-line" id="Supplier_Telephone_Number" name="Supplier_Telephone_Number" type="text" value="" data-bind="value: Supplier_Telephone_Number">
+            <input  maxlength="10" class="form-control text-box single-line" id="Supplier_Telephone_Number" name="Supplier_Telephone_Number" type="text" value="" data-bind="value: Supplier_Telephone_Number,validationElement: Supplier_Telephone_Number">
         </div>
     </div>
     <div class="form-group">

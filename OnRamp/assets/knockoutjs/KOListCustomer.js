@@ -19,11 +19,10 @@
             },
             callback: function (result) {
                 if (result) {
-                    $.get("/Customer/Delete?id=" + e.target.id, function (data) {
+                    $.get("/Customer/Delete?id=" + e.target.parentElement.id, function (data) {
                         if (data) {
                             bootbox.alert("Customer deleted successfully!");
-                            $("#customertable tbody").empty();
-                            modelView.viewCustomers();
+                            modelView.removeCustomer(e);
                         }
                     });
                 }
@@ -74,7 +73,10 @@
     } catch (e) {
         //window.location.href = '/Home/Read/';
     }
-    }
+        },
+        removeCustomer: function (e) {
+            modelView.customers.splice(parseInt(e.target.parentElement.attributes['rowindex'].value), 1);
+        }
 };
 
 

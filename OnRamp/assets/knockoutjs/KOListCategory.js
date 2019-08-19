@@ -18,11 +18,12 @@
                 },
                 callback: function (result) {
                     if (result) {
-                        $.get("/Category/Delete?id=" + e.target.id, function (data) {
+                        $.get("/Category/Delete?id=" + e.target.parentElement.id, function (data) {
                             if (data) {
                                 bootbox.alert("Category deleted successfully!");
-                                $("#categorytable tbody").empty();
-                                modelView.viewCategory();
+                                //$("#categorytable tbody").empty();
+                                //modelView.viewCategory();
+                                modelView.removeCategory(e);
                             }
                         });
                     }
@@ -73,5 +74,8 @@
             } catch (e) {
                 //window.location.href = '/Home/Read/';
             }
+        },
+        removeCategory: function (e) {
+            modelView.categories.splice(parseInt(e.target.parentElement.attributes['rowindex'].value), 1);
         }
     };
