@@ -18,11 +18,13 @@ $(function () {
                 }
             },
             callback: function (result) { 
-                debugger
                 if (result) {
                     $.get("/Supplier/Delete?id=" + e.target.parentElement.id, function (data) {
                         if (data) {
-                            bootbox.alert("Supplier deleted successfully!");
+                            bootbox.alert("Supplier deleted successfully!", function () {
+
+                                location.reload();
+                            });
                             modelView.removeSupplier(e);
                         }
                     });

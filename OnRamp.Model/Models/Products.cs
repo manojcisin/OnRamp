@@ -1,24 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnRamp.Model.Models {
 	public class Products {
 		public int Product_Barcode { get; set; }
-		[Required]
+		[Required(ErrorMessage = "Please select the category")]
 		public int Product_Category_ID { get; set; }
-		[Required]
-		public string Product_Name { get; set; }		
-		public System.DateTime Product_Date_Captured { get; set; }
-		[Required]
+		[Required(ErrorMessage ="Please enter the product name")]
+		public string Product_Name { get; set; }
+		[Required(ErrorMessage = "Please select the product date")]
+		public DateTime Product_Date_Captured { get; set; }
+		[Required(ErrorMessage = "Please select the supplier")]
 		public int Supplier_ID { get; set; }
 		public string Product_Location { get; set; }
-		public Nullable<int> Product_Warranty { get; set; }
-		[Required]
-		public Nullable<int> Product_Status { get; set; }
+		public int? Product_Warranty { get; set; }
+		[Required(ErrorMessage = "Please select the status")]
+		public int? Product_Status { get; set; }
 	}
 
 	public class ProductDetail {
@@ -28,7 +25,7 @@ namespace OnRamp.Model.Models {
 		public string Product_Date { get; set; }
 		public string Supplier_Name { get; set; }
 		public string Product_Location { get; set; }
-		public Nullable<int> Product_Warranty { get; set; }
+		public int? Product_Warranty { get; set; }
 		public string Product_Status { get; set; }
 	}
 
