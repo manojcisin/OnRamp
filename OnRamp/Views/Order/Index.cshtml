@@ -48,9 +48,9 @@
                 <select data-bind="options: $root.paymentStatus,
                         value: Payment_Received,
                         optionsText: 'name',
-                        optionsValue:'id',
-                        event:{ change: 'updatePaymentStatus' }
-                       "></select>
+                        optionsValue:'id', 
+                        @*event: { change: updatePaymentStatus.bind($data, Payment_Received , Order_ID) }*@
+                        "></select>
             </td>
             @*<td data-bind="text: Product_Status"></td>*@
             <td>
@@ -119,12 +119,9 @@
             { name: 'Not Received', id: false },
         ],
         productStatus: [{ name: "Sold", id: 1 }, { name: "Returned", id: 2 }, { name: "Defective", id: 3 }],
-        updatePaymentStatus: function (event) {
-            alert('call');
-        }
+        //updatePaymentStatus: function (data, obj1, obj2) {
+        //    debugger
+        //}
     };
-
-
-
-
+    
 </script>

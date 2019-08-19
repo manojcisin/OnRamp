@@ -41,6 +41,7 @@ namespace OnRamp.DataLayer.Repository {
 			Tbl_Suppliers supplier = Context.Tbl_Suppliers.Find(id);
 			if (supplier != null) {
 				Context.Tbl_Products.RemoveRange(Context.Tbl_Products.Where(x => x.Supplier_ID == id).ToList());
+				Context.Tbl_Orders.RemoveRange(Context.Tbl_Orders.Where(x => x.Supplier_ID == id).ToList());
 				Context.Tbl_Suppliers.Remove(supplier);
 				Context.SaveChanges();
 				return true;

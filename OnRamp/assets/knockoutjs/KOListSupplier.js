@@ -17,9 +17,10 @@ $(function () {
                     className: 'btn-danger'
                 }
             },
-            callback: function (result) {                
+            callback: function (result) { 
+                debugger
                 if (result) {
-                    $.get("/Supplier/Delete?id=" + e.target.id, function (data) {
+                    $.get("/Supplier/Delete?id=" + e.target.parentElement.id, function (data) {
                         if (data) {
                             bootbox.alert("Supplier deleted successfully!");
                             modelView.removeSupplier(e);
@@ -79,7 +80,7 @@ var modelView = {
         }
     },
     removeSupplier: function (e) {
-        modelView.suppliers.splice(parseInt(e.target.attributes['rowindex'].value), 1);        
+        this.suppliers.splice(parseInt(e.target.parentElement.attributes['rowindex'].value), 1);        
     }
 };
 

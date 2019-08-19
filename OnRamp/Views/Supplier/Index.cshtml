@@ -35,7 +35,7 @@
             <td data-bind="text: Supplier_Telephone_Number"></td>
             <td>
                 <a data-bind="attr: { 'href': '@Url.Action("Edit", "Supplier")/' + Supplier_ID }" class="btn-link"><i class="fa fa-pencil"></i></a> 
-                <a class="btnDelete" data-bind="attr: { 'id': Supplier_ID ,'rowIndex':$index() }" id=Supplier_ID><i class="fa fa-trash-o"></i></a>
+                <a class="btnDelete" data-bind="attr: { 'id': Supplier_ID ,'rowIndex':$index() }" rowIndex=$index() id=Supplier_ID><i class="fa fa-trash-o"></i></a>
             </td>
         </tr>
     </tbody>
