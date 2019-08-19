@@ -32,5 +32,9 @@ namespace OnRamp.Controllers {
 			return Json(result, JsonRequestBehavior.AllowGet);
 		}
 
+		public JsonResult UpdatePaymentStatusByOrderId(int orderId, bool paymentStatus) {
+			var result = iRepositoryOrderBL.UpdatePaymentStatusByOrderId(orderId, paymentStatus);
+			return Json(result, JsonRequestBehavior.AllowGet);
+		}
 	}
 }

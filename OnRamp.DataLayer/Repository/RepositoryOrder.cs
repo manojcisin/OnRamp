@@ -35,5 +35,16 @@ namespace OnRamp.DataLayer.Repository {
 		public int GetOutstandingPayments() {
 			return Context.Tbl_Orders.Where(x => !x.Payment_Received).Count();
 		}
+		public bool UpdatePaymentStatusByOrderId(int orderId, bool paymentStatus) {
+			Tbl_Orders order = Context.Tbl_Orders.Find(orderId);
+			if (order != null) {
+				order.Payment_Received = paymentStatus;
+				Context.SaveChanges();
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
 	}
 }

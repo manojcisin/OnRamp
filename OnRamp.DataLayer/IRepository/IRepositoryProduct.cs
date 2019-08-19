@@ -13,5 +13,6 @@ namespace OnRamp.DataLayer.IRepository {
 		object GetProductInStocks();
 		List<ProductDetail> GetProductListForDashBoard();
 		ProductDetail GetProductDetailById(int id);
+		bool UpdateProductStatusByProductBarcode(int productBarcode, int productStatus);
 	}
 }

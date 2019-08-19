@@ -5,39 +5,52 @@
     ViewBag.Title = "Add";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="form-horizontal">
-    <h2>Add</h2>
-    <hr>
-    <div class="form-group hidden">
-        <label class="control-label col-md-2" for="Supplier_ID">Supplier_ID</label>
-        <div class="col-md-10">
-            <input class="form-control text-box single-line" id="Supplier_ID" name="Supplier_ID" type="hidden" value="" data-bind="value: Supplier_ID">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-md-2" for="Supplier_Name">Supplier_Name</label>
-        <div class="col-md-10">
-            <input class="form-control text-box single-line" id="Supplier_Name" name="Supplier_Name" type="text" value="" data-bind="value: Supplier_Name">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-md-2" for="Supplier_Email">Supplier_Email</label>
-        <div class="col-md-10">
-            <input class="form-control text-box single-line" id="Supplier_Email" name="Supplier_Email" type="text" value="" data-bind="value: Supplier_Email">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-md-2" for="Supplier_Telephone_Number">Supplier_Telephone_Number</label>
-        <div class="col-md-10">
-            <input class="form-control text-box single-line" id="Supplier_Telephone_Number" name="Supplier_Telephone_Number" type="text" value="" data-bind="value: Supplier_Telephone_Number">
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="button" data-bind="click: createSupplier" value="Add" class="btn green">
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box purple ">
+            <div class="portlet-title">
+                <div class="caption">
+                    Add Supplier
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal">
+                    <div class="form-body">
+                        <div class="form-group hidden">
+                            <label class="control-label col-md-2" for="Supplier_ID">Supplier_ID</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="Supplier_ID" name="Supplier_ID" type="hidden" value="" data-bind="value: Supplier_ID">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="Supplier_Name">Supplier_Name</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="Supplier_Name" name="Supplier_Name" type="text" value="" data-bind="value: Supplier_Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="Supplier_Email">Supplier_Email</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="Supplier_Email" name="Supplier_Email" type="text" value="" data-bind="value: Supplier_Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="Supplier_Telephone_Number">Supplier_Telephone_Number</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="Supplier_Telephone_Number" name="Supplier_Telephone_Number" type="text" value="" data-bind="value: Supplier_Telephone_Number">
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="form-actions right1">
+                        <input type="button" data-bind="click: createSupplier" value="Add" class="btn green">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
+
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

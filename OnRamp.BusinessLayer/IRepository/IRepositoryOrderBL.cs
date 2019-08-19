@@ -6,5 +6,6 @@ namespace OnRamp.BusinessLayer.IRepository {
 		List<Orders> GetOrderList();
 		int GetOrderForMonth();
 		int GetOutstandingPayments();
+		bool UpdatePaymentStatusByOrderId(int orderId, bool paymentStatus);
 	}
 }

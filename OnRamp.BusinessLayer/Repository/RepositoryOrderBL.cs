@@ -31,5 +31,9 @@ namespace OnRamp.BusinessLayer.Repository {
 		public int GetOutstandingPayments() {
 			return iRepositoryOrder.GetOutstandingPayments();
 		}
+
+		public bool UpdatePaymentStatusByOrderId(int orderId, bool paymentStatus) {
+			return iRepositoryOrder.UpdatePaymentStatusByOrderId(orderId, paymentStatus);
+		}
 	}
 }

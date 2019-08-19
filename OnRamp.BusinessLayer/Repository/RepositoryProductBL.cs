@@ -26,7 +26,7 @@ namespace OnRamp.BusinessLayer.Repository {
 
 		public Products Add(Products product) {
 			var result = iRepositoryProduct.Add(mapProducts.MapFrom(product));
-			return mapProducts.MapTo(result) ;
+			return mapProducts.MapTo(result);
 		}
 
 		public object GetProductInStocks() {
@@ -39,6 +39,10 @@ namespace OnRamp.BusinessLayer.Repository {
 
 		public ProductDetail GetProductDetailById(int id) {
 			return iRepositoryProduct.GetProductDetailById(id);
+		}
+
+		public bool UpdateProductStatusByProductBarcode(int productBarcode, int productStatus) {
+			return iRepositoryProduct.UpdateProductStatusByProductBarcode(productBarcode, productStatus);
 		}
 	}
 }

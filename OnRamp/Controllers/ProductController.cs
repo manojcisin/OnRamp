@@ -57,5 +57,10 @@ namespace OnRamp.Controllers {
 			var result = ((ProductStatus[])Enum.GetValues(typeof(ProductStatus))).Select(x=> new { name = x.ToString() , id = (int)x}).ToList();
 			return Json(result, JsonRequestBehavior.AllowGet);
 		}
+
+		public JsonResult UpdateProductStatusByProductBarcode(int productBarcode,int productStatus) {
+			var result = iRepositoryProductBL.UpdateProductStatusByProductBarcode(productBarcode, productStatus);
+			return Json(result, JsonRequestBehavior.AllowGet);
+		}
 	}
 }

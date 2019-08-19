@@ -58,5 +58,17 @@ namespace OnRamp.DataLayer.Repository {
 			};
 			return productDetail;
 		}
+
+		public bool UpdateProductStatusByProductBarcode(int productBarcode, int productStatus) {
+			Tbl_Products product = Context.Tbl_Products.Find(productBarcode);
+			if (product != null) {
+				product.Product_Status = productStatus;
+				Context.SaveChanges();
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
 	}
 }
