@@ -39,6 +39,7 @@ namespace OnRamp.DataLayer.Repository {
 		public bool RemoveCustomer(int id) {
 			Tbl_Customers customer = Context.Tbl_Customers.Find(id);
 			if (customer != null) {
+				Context.Tbl_Orders.RemoveRange(Context.Tbl_Orders.Where(x => x.Customer_ID == id).ToList());
 				Context.Tbl_Customers.Remove(customer);
 				Context.SaveChanges();
 				return true;

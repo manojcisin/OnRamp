@@ -4,30 +4,32 @@
     ko.applyBindings(modelView);
     modelView.viewCustomers();
 
-        $(document).on("click", ".btnDelete", function (e) {
-        bootbox.confirm({
-            message: "Are you sure! You want remove this customer?",
-            buttons: {
-                confirm: {
-                    label: 'Yes',
-                    className: 'btn-success'
-                },
-                cancel: {
-                    label: 'No',
-                    className: 'btn-danger'
-                }
+       
+});
+
+$(document).on("click", ".btnDelete", function (e) {
+    bootbox.confirm({
+        message: "Are you sure! You want remove this customer?",
+        buttons: {
+            confirm: {
+                label: 'Yes',
+                className: 'btn-success'
             },
-            callback: function (result) {
-                if (result) {
-                    $.get("/Customer/Delete?id=" + e.target.parentElement.id, function (data) {
-                        if (data) {
-                            bootbox.alert("Customer deleted successfully!");
-                            modelView.removeCustomer(e);
-                        }
-                    });
-                }
+            cancel: {
+                label: 'No',
+                className: 'btn-danger'
             }
-        });
+        },
+        callback: function (result) {
+            if (result) {
+                $.get("/Customer/Delete?id=" + e.target.parentElement.id, function (data) {
+                    if (data) {
+                        bootbox.alert("Customer deleted successfully!");
+                        modelView.removeCustomer(e);
+                    }
+                });
+            }
+        }
     });
 });
     var modelView = {

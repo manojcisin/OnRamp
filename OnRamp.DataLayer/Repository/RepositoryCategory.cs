@@ -25,6 +25,12 @@ namespace OnRamp.DataLayer.Repository {
 		public bool RemoveCategory(int id) {
 			Tbl_Product_Category category = Context.Tbl_Product_Category.Find(id);
 			if (category != null) {
+				var barCode = Context.Tbl_Products.Where(c => c.Product_Category_ID == id).Select(f=>f.Product_Barcode).ToList();
+				Context.Tbl_Products.RemoveRange(Context.Tbl_Products.Where(x => x.Product_Category_ID == id).ToList());
+				foreach (var item in barCode) {
+					Context.Tbl_Orders.RemoveRange(Context.Tbl_Orders.Where(x => x.Product_Barcode == item).ToList());
+				}
+				
 				Context.Tbl_Product_Category.Remove(category);
 				Context.SaveChanges();
 				return true;

@@ -18,7 +18,6 @@ $(function () {
                 }
             },
             callback: function (result) { 
-                debugger
                 if (result) {
                     $.get("/Supplier/Delete?id=" + e.target.parentElement.id, function (data) {
                         if (data) {
