@@ -9,36 +9,39 @@
 <p>
     @Html.ActionLink("Add Supplier", "Add")
 </p>
-<table id="suppliertable" class="table table-striped" cellspacing="0" width="100%">
-    <thead>
-        <tr>
-            <th>
-                S.no
-            </th>
-            <th>
-                Supplier Name
-            </th>
-            <th>
-                Supplier Email
-            </th>
-            <th>
-                Supplier TelephoneNumber
-            </th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody data-bind="foreach: suppliers">
-        <tr>
-            <td data-bind="text: ($index() + 1)"></td>
-            <td data-bind="text: Supplier_Name"></td>
-            <td data-bind="text: Supplier_Email"></td>
-            <td data-bind="text: Supplier_Telephone_Number"></td>
-            <td>
-                <a data-bind="attr: { 'href': '@Url.Action("Edit", "Supplier")/' + Supplier_ID }" class="btn-link"><i class="fa fa-pencil"></i></a> 
-                <a class="btnDelete" data-bind="attr: { 'id': Supplier_ID ,'rowIndex':$index() }" rowIndex=$index() id=Supplier_ID><i class="fa fa-trash-o"></i></a>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
+<div class="row">
+    <div class="col-md-12">
+        <table id="suppliertable" class="table table-striped" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>
+                        S.no
+                    </th>
+                    <th>
+                        Supplier Name
+                    </th>
+                    <th>
+                        Supplier Email
+                    </th>
+                    <th>
+                        Supplier TelephoneNumber
+                    </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: suppliers">
+                <tr>
+                    <td data-bind="text: ($index() + 1)"></td>
+                    <td data-bind="text: Supplier_Name"></td>
+                    <td data-bind="text: Supplier_Email"></td>
+                    <td data-bind="text: Supplier_Telephone_Number"></td>
+                    <td>
+                        <a data-bind="attr: { 'href': '@Url.Action("Edit", "Supplier")/' + Supplier_ID }" class="btn-link"><i class="fa fa-pencil"></i></a>
+                        <a class="btnDelete" data-bind="attr: { 'id': Supplier_ID ,'rowIndex':$index() }" rowIndex=$index() id=Supplier_ID><i class="fa fa-trash-o"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 <script src="~/assets/knockoutjs/KOListSupplier.js"></script>
