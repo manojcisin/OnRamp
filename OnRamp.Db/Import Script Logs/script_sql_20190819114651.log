@@ -1,0 +1,22 @@
+8/19/2019 5:16:51 PM	This log contains information about the import operation of the script 'script.sql' into project 'OnRamp.Db' on computer 'CISM-I-357' by user'cis.
+8/19/2019 5:16:51 PM	Started importing file: C:\Users\cis\Documents\script.sql 
+8/19/2019 5:16:51 PM	File name C:\Users\cis\Documents\script.sql (size: 14814)
+8/19/2019 5:16:51 PM	Parsing import script
+8/19/2019 5:16:52 PM	Total number of batches in script: 73
+8/19/2019 5:16:52 PM	Total number of statements in script: 13
+8/19/2019 5:16:52 PM	The script was successfully imported into the project.
+8/19/2019 5:16:52 PM	Analyzing schema objects...
+8/19/2019 5:16:52 PM	Scanning project for duplicate elements
+8/19/2019 5:16:52 PM	Element 'Tbl_Customers' was merged into the existing script: 'D:\onRamp\OnRamp.Db\dbo\Tables\Tbl_Customers.sql'.
+8/19/2019 5:16:52 PM	Element 'Tbl_Orders' was merged into the existing script: 'D:\onRamp\OnRamp.Db\dbo\Tables\Tbl_Orders.sql'.
+8/19/2019 5:16:52 PM	Element 'Tbl_Product_Category' was merged into the existing script: 'D:\onRamp\OnRamp.Db\dbo\Tables\Tbl_Product_Category.sql'.
+8/19/2019 5:16:52 PM	Element 'Tbl_Products' was merged into the existing script: 'D:\onRamp\OnRamp.Db\dbo\Tables\Tbl_Products.sql'.
+8/19/2019 5:16:52 PM	Element 'Tbl_Suppliers' was merged into the existing script: 'D:\onRamp\OnRamp.Db\dbo\Tables\Tbl_Suppliers.sql'.
+8/19/2019 5:16:52 PM	Element 'FK_Tbl_Orders_Tbl_Customers' was merged into the existing script: 'D:\onRamp\OnRamp.Db\dbo\Tables\Tbl_Orders.sql'.
+8/19/2019 5:16:52 PM	Element 'FK_Tbl_Products_Tbl_Product_Category' was merged into the existing script: 'D:\onRamp\OnRamp.Db\dbo\Tables\Tbl_Products.sql'.
+8/19/2019 5:16:52 PM	Element 'FK_Tbl_Products_Tbl_Suppliers' was merged into the existing script: 'D:\onRamp\OnRamp.Db\dbo\Tables\Tbl_Products.sql'.
+8/19/2019 5:16:52 PM	Element 'manoj' was merged into the existing script: 'D:\onRamp\OnRamp.Db\Security\manoj_1.sql'.
+8/19/2019 5:16:52 PM	Finished duplicate element processing
+8/19/2019 5:16:52 PM	In the script that you provided to the import operation, one or more statements were not fully understood. These statements were moved to the ScriptsIgnoredOnImport.sql file. Review the file contents for additional information.
+8/19/2019 5:16:52 PM	A summary of the import was saved to the following location: D:\onRamp\OnRamp.Db\Import Script Logs\script_sql_20190819114651.log
+8/19/2019 5:16:52 PM	Click Finish to continue...

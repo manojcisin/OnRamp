@@ -1,0 +1,26 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [manoj] (Schema)
+       [dbo].[Tbl_Customers] (Table)
+       [dbo].[Tbl_Orders] (Table)
+       [dbo].[Tbl_Product_Category] (Table)
+       [dbo].[Tbl_Products] (Table)
+       [dbo].[Tbl_Suppliers] (Table)
+       [dbo].[DF_Tbl_Orders_Payment_Received] (Default Constraint)
+       [dbo].[FK_Tbl_Orders_Tbl_Customers] (Foreign Key)
+       [dbo].[FK_Tbl_Orders_Tbl_Product] (Foreign Key)
+       [dbo].[FK_Tbl_Orders_Tbl_Suppliers] (Foreign Key)
+       [dbo].[FK_Tbl_Products_Tbl_Product_Category] (Foreign Key)
+       [dbo].[FK_Tbl_Products_Tbl_Suppliers] (Foreign Key)
+
+** Supporting actions

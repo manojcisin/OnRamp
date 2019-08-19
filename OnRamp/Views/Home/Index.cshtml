@@ -98,10 +98,6 @@
                 </div>
                 <div class="actions">
                     <div class="btn-group">
-                        @*<a class="btn btn-sm blue btn-outline btn-circle" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            Filter By
-                            <i class="fa fa-angle-down"></i>
-                        </a>*@    
                         <a onclick="AddProduct()" class=" btn btn-sm blue btn-outline btn-circle">
                             <i class="fa fa-plus">Add Product</i>
                         </a>
@@ -291,9 +287,9 @@
                 categoryAxis.renderer.minGridDistance = 30;
 
                 categoryAxis.renderer.labels.template.adapter.add("dy", function (dy, target) {
-                    if (target.dataItem && target.dataItem.index & 2 == 2) {
-                        return dy + 25;
-                    }
+                    //if (target.dataItem && target.dataItem.index & 2 == 2) {
+                    //    return dy+25 ;
+                    //}
                     return dy;
                 });
 
