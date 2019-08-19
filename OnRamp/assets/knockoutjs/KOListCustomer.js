@@ -24,7 +24,10 @@ $(document).on("click", ".btnDelete", function (e) {
             if (result) {
                 $.get("/Customer/Delete?id=" + e.target.parentElement.id, function (data) {
                     if (data) {
-                        bootbox.alert("Customer deleted successfully!");
+                        bootbox.alert("Customer deleted successfully!", function () {
+
+                            location.reload();
+                        });
                         modelView.removeCustomer(e);
                     }
                 });

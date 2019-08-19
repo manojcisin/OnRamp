@@ -22,8 +22,12 @@
                     if (result) {
                         $.get("/Category/Delete?id=" + e.target.parentElement.id, function (data) {
                             if (data) {
-                                bootbox.alert("Category deleted successfully!");
+                                bootbox.alert("Category deleted successfully!", function () {
+
+                                    location.reload();
+                                });
                                 modelView.removeCategory(e);
+                               
                             }
                         });
                     }
